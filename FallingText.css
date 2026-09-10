@@ -1,0 +1,103 @@
+.falling-text-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 280px;
+  height: 100%;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.falling-text-container:active {
+  cursor: grabbing;
+}
+
+.falling-text-target {
+  display: inline-block;
+  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  max-width: 900px;
+}
+
+.falling-text-container .word {
+  display: inline-block;
+  margin: 0 4px;
+  user-select: none;
+  white-space: nowrap;
+  font-family: inherit;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.falling-text-container .highlighted {
+  color: var(--primary-mint, #34D399) !important;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.falling-text-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Physics Sandbox section styling */
+.section-physics-sandbox {
+  background: #0d1514;
+  padding: 5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.physics-sandbox-card {
+  background: rgba(18, 30, 28, 0.7);
+  border: 1px solid rgba(52, 211, 153, 0.18);
+  border-radius: 28px;
+  padding: 3rem 2rem 2.5rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.physics-sandbox-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-mint, #34D399);
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-physics-sandbox {
+    padding: 3.5rem 0;
+  }
+  .physics-sandbox-card {
+    padding: 2rem 1rem 1.75rem;
+    border-radius: 20px;
+  }
+  .falling-text-container {
+    min-height: 220px;
+    padding: 1.5rem 0.5rem;
+  }
+  .physics-sandbox-hint {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.75rem;
+  }
+}

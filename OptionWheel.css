@@ -1,0 +1,210 @@
+.option-wheel {
+  --ow-text-color: #8E9E99;
+  --ow-active-color: #0F2C27;
+  --ow-font-size: 2.75rem;
+  --ow-inset: 80px;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  outline: none;
+}
+
+.option-wheel--dragging {
+  cursor: grabbing;
+}
+
+/* Each option is absolutely centered, then offset along the curve by the
+   rAF loop through transform/opacity/filter, so everything stays in step. */
+.option-wheel__item {
+  position: absolute;
+  top: 50%;
+  left: var(--ow-inset);
+  white-space: nowrap;
+  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  font-size: var(--ow-font-size);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-weight: 400;
+  transform-origin: left center;
+  cursor: pointer;
+  will-change: transform, opacity, filter;
+  /* --ow-p goes 0 -> 1 as an option approaches the middle of the wheel */
+  color: color-mix(in srgb, var(--ow-active-color) calc(var(--ow-p, 0) * 100%), var(--ow-text-color));
+  transition: color 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.option-wheel--right .option-wheel__item {
+  left: auto;
+  right: var(--ow-inset);
+  transform-origin: right center;
+}
+
+.option-wheel__item--selected {
+  font-weight: 700;
+  color: var(--ow-active-color);
+}
+
+.option-wheel__item-num {
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--primary-mint, #34D399);
+  opacity: calc(var(--ow-p, 0) * 0.9 + 0.2);
+  transform: translateY(-0.25rem);
+}
+
+.option-wheel__item-badge {
+  display: inline-block;
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(15, 44, 39, 0.08);
+  color: var(--primary-dark, #0F2C27);
+  border: 1px solid rgba(15, 44, 39, 0.14);
+  opacity: calc(var(--ow-p, 0));
+  transform: translateY(-0.1rem);
+}
+
+/* Fullscreen Menu Overlay container customizations */
+.fullscreen-menu-wheel-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 5% 2rem 4%;
+  position: relative;
+}
+
+.fullscreen-menu-wheel-container {
+  flex: 1 1 58%;
+  height: 80vh;
+  position: relative;
+  min-width: 0;
+}
+
+.fullscreen-menu-side-card {
+  flex: 0 0 380px;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(15, 44, 39, 0.12);
+  border-radius: 24px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 20px 50px rgba(15, 44, 39, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 2;
+  transition: all 0.35s ease;
+}
+
+.fullscreen-menu-side-card__tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary-dark, #0F2C27);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.fullscreen-menu-side-card__tag::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-mint, #34D399);
+}
+
+.fullscreen-menu-side-card__title {
+  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark, #0F2C27);
+  margin: 0;
+}
+
+.fullscreen-menu-side-card__desc {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted, #5A6D67);
+  margin: 0;
+}
+
+.fullscreen-menu-side-card__cta {
+  margin-top: 0.5rem;
+}
+
+.option-wheel-guide {
+  position: absolute;
+  bottom: 2rem;
+  left: 5%;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8E9E99;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .fullscreen-menu-wheel-wrap {
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 1.5rem 2rem;
+  }
+
+  .fullscreen-menu-wheel-container {
+    flex: 1 1 70vh;
+    height: 70vh;
+    width: 100%;
+  }
+
+  .option-wheel {
+    --ow-font-size: 1.85rem;
+    --ow-inset: 24px;
+  }
+
+  .fullscreen-menu-side-card {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .fullscreen-menu-wheel-wrap {
+    padding: 4.5rem 1rem 1.5rem;
+  }
+
+  .option-wheel {
+    --ow-font-size: 1.45rem;
+    --ow-inset: 14px;
+  }
+
+  .option-wheel__item {
+    gap: 0.5rem;
+  }
+
+  .option-wheel__item-badge {
+    display: none;
+  }
+}

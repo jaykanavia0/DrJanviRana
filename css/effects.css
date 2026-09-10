@@ -1,0 +1,901 @@
+/* ============================================================
+   0. Fullscreen Site Initial Loading Screen (Uiverse Domino Spinner)
+   ============================================================ */
+.site-loader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background: #091211;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.75s ease;
+  pointer-events: all;
+}
+
+.site-loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-loader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.25rem;
+}
+
+/* From Uiverse.io by satyamchaudharydev */ 
+.spinner {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: -75px;
+}
+
+.spinner span {
+  position: absolute;
+  top: 50%;
+  left: var(--left);
+  width: 35px;
+  height: 7px;
+  background: #34D399;
+  animation: dominos 1s ease infinite;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+}
+
+.spinner span:nth-child(1) {
+  --left: 80px;
+  animation-delay: 0.125s;
+}
+
+.spinner span:nth-child(2) {
+  --left: 70px;
+  animation-delay: 0.3s;
+}
+
+.spinner span:nth-child(3) {
+  left: 60px;
+  animation-delay: 0.425s;
+}
+
+.spinner span:nth-child(4) {
+  animation-delay: 0.54s;
+  left: 50px;
+}
+
+.spinner span:nth-child(5) {
+  animation-delay: 0.665s;
+  left: 40px;
+}
+
+.spinner span:nth-child(6) {
+  animation-delay: 0.79s;
+  left: 30px;
+}
+
+.spinner span:nth-child(7) {
+  animation-delay: 0.915s;
+  left: 20px;
+}
+
+.spinner span:nth-child(8) {
+  left: 10px;
+}
+
+@keyframes dominos {
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  80% {
+    opacity: 1;
+  }
+}
+
+.site-loader__brand {
+  text-align: center;
+  color: #ffffff;
+}
+
+.site-loader__title {
+  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.site-loader__tagline {
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary-mint, #34D399);
+  opacity: 0.9;
+}
+
+/* ============================================================
+   1. The Iconic Bubble-Link Button
+   ============================================================ */
+.bubble-link {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: 60px;
+  border-radius: 30px;
+  color: var(--primary);
+  text-decoration: none;
+  border: 1.5px solid var(--primary);
+  background-color: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Alignments */
+.bubble-link.left {
+  padding-left: 64px;
+  padding-right: 28px;
+}
+
+.bubble-link.right {
+  padding-right: 64px;
+  padding-left: 28px;
+}
+
+/* Base text */
+.bubble-link .btn-text {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  white-space: nowrap;
+  transition: transform 0.6s var(--ease-medwest), color 0.6s var(--ease-medwest);
+  position: relative;
+  z-index: 1;
+}
+
+/* Circular bubble elements */
+.bubble-link .bubble,
+.bubble-link .bubble-hover {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  background-color: var(--primary);
+  transform: translateY(-50%) scale(1);
+  transition: transform 0.75s var(--ease-medwest), width 0.75s var(--ease-medwest), height 0.75s var(--ease-medwest);
+  pointer-events: none;
+}
+
+.bubble-link.left .bubble,
+.bubble-link.left .bubble-hover {
+  left: 8px;
+}
+
+.bubble-link.right .bubble,
+.bubble-link.right .bubble-hover {
+  right: 8px;
+}
+
+/* The magic clip mask in .bubble-hover */
+.bubble-link .bubble-hover {
+  z-index: 2;
+  overflow: hidden;
+  background-color: var(--primary);
+}
+
+.bubble-link .bubble-hover .btn-text {
+  color: #ffffff !important;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bubble-link.left .bubble-hover .btn-text {
+  left: 56px;
+}
+
+.bubble-link.right .bubble-hover .btn-text {
+  right: 56px;
+}
+
+/* Hover expansion */
+.bubble-link:hover {
+  border-color: var(--primary-hover);
+  box-shadow: 0 8px 24px rgba(0, 160, 154, 0.25);
+  transform: translateY(-2px);
+}
+
+.bubble-link.left:hover .bubble,
+.bubble-link.left:hover .bubble-hover {
+  transform: translateY(-50%) scale(1);
+  width: 480px;
+  height: 480px;
+  left: -120px;
+}
+
+.bubble-link.right:hover .bubble,
+.bubble-link.right:hover .bubble-hover {
+  transform: translateY(-50%) scale(1);
+  width: 480px;
+  height: 480px;
+  right: -120px;
+}
+
+/* Small Variant (.small) */
+.bubble-link.small {
+  height: 46px;
+  border-radius: 23px;
+}
+
+.bubble-link.small.left {
+  padding-left: 50px;
+  padding-right: 22px;
+}
+
+.bubble-link.small.right {
+  padding-right: 50px;
+  padding-left: 22px;
+}
+
+.bubble-link.small .btn-text {
+  font-size: 0.78rem;
+}
+
+.bubble-link.small .bubble,
+.bubble-link.small .bubble-hover {
+  width: 32px;
+  height: 32px;
+}
+
+.bubble-link.small.left .bubble,
+.bubble-link.small.left .bubble-hover {
+  left: 7px;
+}
+
+.bubble-link.small.right .bubble,
+.bubble-link.small.right .bubble-hover {
+  right: 7px;
+}
+
+.bubble-link.small.left .bubble-hover .btn-text {
+  left: 43px;
+}
+
+.bubble-link.small.right .bubble-hover .btn-text {
+  right: 43px;
+}
+
+/* WhatsApp Accent Variant (.whatsapp) */
+.bubble-link.whatsapp {
+  border-color: #25D366;
+  color: #128C7E;
+}
+
+.bubble-link.whatsapp .btn-text {
+  color: #128C7E;
+}
+
+.bubble-link.whatsapp .bubble,
+.bubble-link.whatsapp .bubble-hover {
+  background-color: #25D366;
+}
+
+.bubble-link.whatsapp:hover {
+  border-color: #128C7E;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.28);
+}
+
+/* Pulsing Aura Variant (.pulsing) */
+.bubble-link.pulsing {
+  position: relative;
+}
+
+.bubble-link.pulsing::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 36px;
+  border: 2px solid var(--primary);
+  opacity: 0.8;
+  animation: pulseAura 2.2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes pulseAura {
+  0% { transform: scale(0.96); opacity: 0.8; }
+  60% { transform: scale(1.08); opacity: 0; }
+  100% { transform: scale(1.08); opacity: 0; }
+}
+
+/* Floating WhatsApp Quick Action Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 350;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #25D366;
+  color: #fff;
+  padding: 0.75rem 1.4rem;
+  border-radius: 40px;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.floating-whatsapp svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.45);
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .floating-whatsapp {
+    bottom: 20px;
+    right: 20px;
+    padding: 0.65rem 1.1rem;
+    font-size: 0.78rem;
+  }
+}
+
+/* ============================================================
+   2. Aperture Circular Curtain Transition (#curtain)
+   ============================================================ */
+#curtain {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  transform: translate(-50%, -50%);
+  z-index: 900;
+  pointer-events: none;
+  transition: width 0.9s var(--ease-medwest), height 0.9s var(--ease-medwest);
+}
+
+#curtain.active {
+  width: 280vmax;
+  height: 280vmax;
+  pointer-events: all;
+}
+
+#trans-word {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 910;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s var(--ease-medwest);
+}
+
+#trans-word.active {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+#trans-word .wrap {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 6vw, 5.5rem);
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   3. Dual Slide-Out Modals (#medwest-modal, #medwest-modal-right)
+   ============================================================ */
+.medwest-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 26, 24, 0.65);
+  backdrop-filter: blur(8px);
+  z-index: 400;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+body.medwest-modal-open .medwest-modal-backdrop,
+body.medwest-modal-open-right .medwest-modal-backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+#medwest-modal,
+#medwest-modal-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 90%;
+  max-width: 650px;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 500;
+  background-color: var(--bg-white);
+  padding: 4rem 3.5rem;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.25);
+  transition: transform 0.65s var(--ease-medwest), visibility 0.65s ease;
+  visibility: hidden;
+}
+
+@media (max-width: 576px) {
+  #medwest-modal,
+  #medwest-modal-right {
+    width: 100%;
+    max-width: 100%;
+    padding: 3.5rem 1.25rem 2.5rem;
+  }
+  .form-control {
+    font-size: 16px !important; /* Prevents auto-zoom in iOS Safari */
+  }
+}
+
+#medwest-modal {
+  left: 0;
+  transform: translateX(-100%);
+  background-color: var(--primary-alt);
+  color: #ffffff;
+}
+
+#medwest-modal-right {
+  right: 0;
+  transform: translateX(100%);
+  background-color: #ffffff;
+  color: var(--dark);
+}
+
+body.medwest-modal-open #medwest-modal {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+body.medwest-modal-open-right #medwest-modal-right {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* Page displacement during modal */
+#medwest-page {
+  position: relative;
+  transition: transform 0.65s var(--ease-medwest), filter 0.65s ease;
+}
+
+body.medwest-modal-open #medwest-page {
+  transform: translateX(50px);
+  filter: blur(2px);
+}
+
+body.medwest-modal-open-right #medwest-page {
+  transform: translateX(-50px);
+  filter: blur(2px);
+}
+
+/* Modal Close Button */
+.modal-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+#medwest-modal-right .modal-close-btn {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #ffffff;
+  transition: transform 0.4s ease;
+}
+
+#medwest-modal-right .modal-close-btn svg {
+  stroke: var(--dark);
+}
+
+.modal-close-btn:hover {
+  transform: rotate(90deg);
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#medwest-modal-right .modal-close-btn:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* Left Modal Content Styles */
+.modal-lead-title {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 1.75rem;
+  color: #ffffff;
+}
+
+.modal-lead-title em {
+  color: var(--primary-mint);
+  font-style: italic;
+}
+
+.modal-text {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1.5rem;
+}
+
+.modal-info-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--primary-mint);
+  padding: 1.35rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+}
+
+.modal-info-box h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+  color: #fff;
+}
+
+.modal-info-box p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Mode Selection Pills (In-Clinic vs Virtual) */
+.consultation-mode-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.mode-btn {
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dark-soft);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.mode-btn.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  box-shadow: 0 4px 14px rgba(0, 160, 154, 0.15);
+}
+
+.mode-badge-clinic {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: #E0F2F1;
+  color: #00796B;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.mode-badge-virtual {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: #EDE7F6;
+  color: #5E35B1;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Right Modal Form Styles */
+.booking-form {
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.35rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  color: var(--dark);
+  border: 1.5px solid var(--border-light);
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(0, 160, 154, 0.12);
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-success-alert {
+  display: none;
+  background: #E8F5E9;
+  border: 1px solid #A5D6A7;
+  color: #2E7D32;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   4. Hamburger Menu & Fullscreen Navigation Overlay
+   ============================================================ */
+#menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 600;
+}
+
+.menu-toggle-text {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.menu-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.4s ease;
+}
+
+#menu-toggle:hover .menu-icon-wrap {
+  background: var(--primary);
+}
+
+#menu-toggle:hover .menu-icon-wrap svg {
+  stroke: #ffffff;
+}
+
+.menu-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary);
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  transition: stroke 0.3s ease;
+}
+
+.menu-icon-line-1,
+.menu-icon-line-2 {
+  transition: transform 0.4s var(--ease-medwest);
+  transform-origin: center;
+}
+
+body.menu-open .menu-icon-line-1 {
+  transform: translateY(4px) rotate(45deg);
+}
+
+body.menu-open .menu-icon-line-2 {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+#fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 550;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s var(--ease-medwest), visibility 0.5s ease;
+}
+
+body.menu-open #fullscreen-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-grid {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  list-style: none;
+}
+
+@media (max-width: 850px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+}
+
+.menu-grid-item {
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================================================
+   5. Custom Interactive Cursor (#cursor)
+   ============================================================ */
+#cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+#cursor-follower {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.35s ease, height 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+body:hover #cursor,
+body:hover #cursor-follower {
+  opacity: 1;
+}
+
+#cursor.click-down {
+  width: 6px;
+  height: 6px;
+}
+
+#cursor-follower.drag-show {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(0, 160, 154, 0.15);
+  border-color: var(--primary);
+}
+
+@media (max-width: 991px) {
+  #cursor, #cursor-follower {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   6. Practice Facility Tabs Transitions (.toLeft, .fromRight)
+   ============================================================ */
+.tab-pane.fromRight {
+  animation: slideFromRight 0.5s var(--ease-medwest) forwards;
+}
+
+.tab-pane.fromLeft {
+  animation: slideFromLeft 0.5s var(--ease-medwest) forwards;
+}
+
+@keyframes slideFromRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}

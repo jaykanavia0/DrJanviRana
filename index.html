@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en" class="stfmkrs-framework">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dr. Janvi Rana (PT) | Physiotherapist Surat – Personal Visits & Virtual Sessions – RANA.PLUS*</title>
+  <meta name="description"
+    content="Personalized 1-on-1 physiotherapy by Dr. Janvi Rana, BPT (Govt. Physiotherapy College (Civil), Surat • VNSGU). Evidence-based home visits across Adajan, Pal, Jahangirpura, Palanpur, Vesu, Piplod, Umra, Athwa & global virtual sessions.">
+
+  <!-- Favicon and Theme Color -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2300A09A'/><text x='50' y='65' font-size='44' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>JR*</text></svg>">
+  <meta name="theme-color" content="#1b5e37">
+
+  <!-- High-Editorial Google Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Effects Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="FlowingMenu.css">
+  <link rel="stylesheet" href="WebThreads.css">
+  <link rel="stylesheet" href="ScrollExpand.css">
+  <link rel="stylesheet" href="OptionWheel.css">
+  <link rel="stylesheet" href="ScrollReveal.css">
+  <link rel="stylesheet" href="css/uiverse-button.css">
+
+  <!-- GSAP 3 & ScrollTrigger for React Bits FlowingMenu and ScrollReveal kinetic animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Fullscreen Site Initial Loading Screen (Uiverse Domino Spinner by satyamchaudharydev) -->
+  <div id="site-loader" class="site-loader" aria-hidden="false">
+    <div class="site-loader__inner">
+      <div class="spinner">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="site-loader__brand">
+        <div class="site-loader__title">DR. JANVI RANA<span class="asterisk-mark">*</span></div>
+        <div class="site-loader__tagline">Clinical Precision in Motion</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Trailing Interactive Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- Fullscreen Circular Aperture Curtain Transition -->
+  <div id="curtain"></div>
+  <div id="trans-word" class="ft-serif ft-w-500 text-uppercase">
+    <div class="wrap">HOME</div>
+  </div>
+
+  <!-- Floating Quick WhatsApp Action (+91 9662698781) -->
+  <a href="https://wa.me/919662698781?text=Hello%20Dr.%20Janvi%20Rana!%20I%20would%20like%20to%20inquire%20about%20a%20Physiotherapy%20visit%20in%20Surat%20or%20a%20Virtual%20Session."
+    target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Direct WhatsApp with Dr. Janvi Rana">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+    </svg>
+    <span>WhatsApp Dr. Janvi</span>
+  </a>
+
+  <!-- Dual Slide-Out Modal: Left Drawer (Doctor Profile & Clinical Credentials) -->
+  <div class="medwest-modal-backdrop"></div>
+  <aside id="medwest-modal" aria-label="About Dr. Janvi Rana">
+    <button class="modal-close-btn" aria-label="Close Drawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="modal-inner">
+      <div class="d-flex align-items-center mb-3" style="gap: 1.15rem;">
+        <img src="Jaana.png" alt="Dr. Janvi Rana (PT)"
+          style="width: 68px; height: 68px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2.5px solid var(--primary-mint); box-shadow: 0 4px 14px rgba(0, 160, 154, 0.35); flex-shrink: 0;">
+        <div>
+          <div class="asterisk ft-b-tiny ft-serif text-uppercase text-primary-mint mb-1">Verified Clinical Credentials
+          </div>
+          <h3 class="modal-lead-title" style="margin: 0; font-size: 1.5rem;">Dr. Janvi Rana <em>(PT)</em></h3>
+        </div>
+      </div>
+      <p class="text-primary-mint ft-b-small" style="margin-top: -0.25rem; margin-bottom: 1.25rem;">
+        Bachelor of Physiotherapy (BPT) • Govt. Physiotherapy College (Civil), Surat • VNSGU
+      </p>
+
+      <div class="modal-info-box" style="border-left: 3px solid #5eead4; background: rgba(0, 160, 154, 0.15);">
+        <h4 style="color: #5eead4; margin-bottom: 0.35rem;">Civil Hospital Surat • Comprehensive Rotations (2026)</h4>
+        <p style="margin: 0; color: #e2e8f0;">Hands-on rotatory clinical internship across high-acuity departments:
+          <strong>Orthopedics, Neurology, General Medicine, Surgery, Pediatrics, and ICU & Cardiopulmonary</strong>.</p>
+      </div>
+
+      <p class="modal-text">
+        Compassionate, evidence-based physiotherapist with extensive clinical exposure across orthopedic, neurological,
+        pediatric, and critical care hospital settings. Graduated from <strong>Government Physiotherapy College (Civil),
+          Surat</strong> (affiliated to Veer Narmad South Gujarat University).
+      </p>
+
+      <div class="modal-info-box">
+        <h4>Departmental Clinical Training</h4>
+        <p>• <strong>Orthopedics & Surgery:</strong> Post-operative protocols, fracture care, joint replacement &
+          mobilization<br>
+          • <strong>Neurology & Medicine:</strong> Stroke recovery, neural mobilization & motor re-education<br>
+          • <strong>ICU & Cardiopulmonary:</strong> Chest physiotherapy & early critical mobilization<br>
+          • <strong>Pediatrics:</strong> Developmental positioning & age-appropriate therapeutic exercise</p>
+      </div>
+
+      <div class="modal-info-box">
+        <h4>Outpatient Clinical Training</h4>
+        <p><strong>Premvati Narayandas Arora Charitable Trust Clinic:</strong> Comprehensive patient assessment,
+          therapeutic exercise prescription, and tailored active home wellness programs.</p>
+      </div>
+
+      <div class="modal-info-box">
+        <h4>Core Clinical Modalities & Equipment</h4>
+        <p>• <strong>Electrotherapy:</strong> IFT, TENS, Therapeutic Ultrasound & Wax Therapy<br>
+          • <strong>Manual Therapy:</strong> Joint mobilization, capsular release & muscle re-activation<br>
+          • <strong>Exercise Prescription:</strong> Personalized progressive strengthening & gait training</p>
+      </div>
+
+      <div class="modal-info-box">
+        <h4>Languages & Consultation</h4>
+        <p>• <strong>Languages:</strong> English • Hindi • Gujarati<br>
+          • <strong>Home Visits:</strong> In-person visits across covered Surat areas<br>
+          • <strong>Virtual Care:</strong> HD telehealth video consultations globally</p>
+      </div>
+
+      <div class="mt-4">
+        <a href="javascript:void(0);" data-open-modal="right" data-mode="visit"
+          class="button button-item button-mint button-small">
+          <span class="button-bg">
+            <span class="button-bg-layers">
+              <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+              <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+              <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+            </span>
+          </span>
+          <span class="button-inner">
+            <span class="button-inner-static">Schedule Consultation</span>
+            <span class="button-inner-hover">Schedule Consultation</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Dual Slide-Out Modal: Right Drawer (Consultation & In-Home / Virtual Booking) -->
+  <aside id="medwest-modal-right" aria-label="Book Physiotherapy Consultation">
+    <button class="modal-close-btn" aria-label="Close Consultation Drawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="modal-inner">
+      <div class="modal-badge">PRIORITY CLINICAL RESERVATION</div>
+      <h3 class="modal-title">Book a <em>Session</em></h3>
+      <p class="modal-desc">
+        Select between dedicated <strong>Surat in-home visits</strong> or global <strong>HD virtual video
+          telehealth</strong>. Dr. Janvi Rana will personally review your case.
+      </p>
+
+      <!-- Consultation Mode Toggle -->
+      <div class="mode-toggle-group">
+        <button type="button" class="mode-btn active" data-mode="visit">
+          Surat In-Home Visit
+        </button>
+        <button type="button" class="mode-btn" data-mode="virtual">
+          HD Virtual Video Session
+        </button>
+      </div>
+
+      <div id="mode-notice" class="mode-notice">
+        <strong>Surat Visit:</strong> Personal 1-on-1 session by Dr. Janvi Rana across covered Surat areas (Adajan, Pal,
+        Jahangirpura, Palanpur, Vesu, Piplod, Umra, Athwa).
+      </div>
+
+      <div id="booking-success-alert" class="alert alert-success d-none" role="alert">
+        <strong>Thank You!</strong> Redirecting your consultation request to Dr. Janvi Rana on WhatsApp (+91 96626
+        98781)...
+      </div>
+
+      <!-- Booking Form -->
+      <form id="consultation-form" class="mt-4">
+        <input type="hidden" id="appointment-type" name="appointmentType" value="visit">
+
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <div class="form-group">
+              <label for="client-name">Full Name *</label>
+              <input type="text" id="client-name" class="form-control" placeholder="e.g. Rahul Patel" required>
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="form-group">
+              <label for="client-phone">Phone / WhatsApp Number *</label>
+              <input type="tel" id="client-phone" class="form-control" placeholder="e.g. +91 98765 43210" required>
+            </div>
+          </div>
+        </div>
+
+        <div id="area-selection-group" class="form-group">
+          <label for="client-area">Surat Residence Area / Locality *</label>
+          <select id="client-area" class="form-control">
+            <option value="Adajan">Adajan</option>
+            <option value="Pal">Pal</option>
+            <option value="Jahangirpura">Jahangirpura</option>
+            <option value="Palanpur">Palanpur</option>
+            <option value="Vesu">Vesu</option>
+            <option value="Piplod">Piplod</option>
+            <option value="Umra">Umra</option>
+            <option value="Athwa">Athwa Lines</option>
+            <option value="VIP Road / Vesu">VIP Road / Vesu</option>
+            <option value="Other Surat Area">Other Surat Locality (Specify below)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="client-service">Primary Concern / Clinical Specialization *</label>
+          <select id="client-service" class="form-control" required>
+            <option value="" disabled selected>Select clinical specialization...</option>
+            <option value="Post-Operative Orthopedic Rehab">Post-Operative Rehab (ACL, TKR, THR, Fractures)</option>
+            <option value="Spine, Sciatica & Disc Relief">Cervical Spine, Sciatica & Slip Disc Relief</option>
+            <option value="Neurological & Stroke Rehabilitation">Neurological & Stroke Rehabilitation</option>
+            <option value="Frozen Shoulder & Joint Mobility">Frozen Shoulder & Joint Mobilization</option>
+            <option value="Chest Physiotherapy & ICU Care">Chest Physiotherapy & Breathing Retraining</option>
+            <option value="Posture & Ergonomic Correction">Desk Worker Posture & Ergonomic Audit</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="client-message">Brief Description of Pain or Recovery Goal</label>
+          <textarea id="client-message" class="form-control"
+            placeholder="How long have you had this issue? Any doctor prescriptions or X-rays?"></textarea>
+        </div>
+
+        <div class="mt-4 d-flex flex-wrap" style="gap: 1rem; align-items: center;">
+          <button type="submit" class="button button-item button-mint">
+            <span class="button-bg">
+              <span class="button-bg-layers">
+                <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+              </span>
+            </span>
+            <span class="button-inner">
+              <span class="button-inner-static">Confirm Reservation</span>
+              <span class="button-inner-hover">Confirm Reservation</span>
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </aside>
+
+  <!-- Fullscreen Navigation Menu Overlay with React Bits OptionWheel -->
+  <nav id="fullscreen-menu" aria-label="Main Navigation">
+    <div class="fullscreen-menu-wheel-wrap">
+      <!-- Left side: Interactive React Bits OptionWheel -->
+      <div class="fullscreen-menu-wheel-container">
+        <div id="option-wheel-menu"></div>
+      </div>
+
+      <!-- Right side: Dynamic Preview & Quick Action Card -->
+      <div id="fullscreen-menu-side-card" class="fullscreen-menu-side-card">
+        <div class="fullscreen-menu-side-card__tag">Clinical Profile</div>
+        <h3 class="fullscreen-menu-side-card__title">Dr. Janvi Rana (PT)</h3>
+        <p class="fullscreen-menu-side-card__desc">
+          BPT from Govt. Physiotherapy College Surat • VNSGU. 6 months intensive rotatory clinical internship across Civil Hospital high-acuity wards.
+        </p>
+        <a href="#about-doctor" class="button button-item button-dark button-small fullscreen-menu-side-card__cta">
+          <span class="button-bg">
+            <span class="button-bg-layers">
+              <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+              <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+              <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+            </span>
+          </span>
+          <span class="button-inner">
+            <span class="button-inner-static">View Profile</span>
+            <span class="button-inner-hover">View Profile</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="option-wheel-guide">
+        <span>↕ Scroll or drag wheel to explore • Click to navigate</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Website Container (#medwest-page) -->
+  <div id="medwest-page">
+
+    <!-- Fixed Header -->
+    <header id="medwest-header">
+      <a href="#" class="brand-wrap" data-trans="DR. JANVI RANA">
+        <div class="brand-symbol">
+          <svg viewBox="0 0 24 24">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">DR. JANVI RANA<span class="asterisk-mark">*</span></div>
+          <div class="brand-tagline">*Physiotherapist • Surat & Virtual</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <!-- Direct Quick Consultation Header Action (Opens Modal) -->
+        <a href="javascript:void(0);" data-open-modal="right" data-mode="visit"
+          class="button button-item button-mint button-small d-none d-md-inline-flex">
+          <span class="button-bg">
+            <span class="button-bg-layers">
+              <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+              <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+              <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+            </span>
+          </span>
+          <span class="button-inner">
+            <span class="button-inner-static">Book Consultation</span>
+            <span class="button-inner-hover">Book Consultation</span>
+          </span>
+        </a>
+
+        <!-- Animated Hamburger Toggle -->
+        <button id="menu-toggle" aria-label="Toggle Menu">
+          <span class="menu-toggle-text d-none d-sm-inline">Menu</span>
+          <div class="menu-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <line class="menu-icon-line-1" x1="4" y1="8" x2="20" y2="8"></line>
+              <line class="menu-icon-line-2" x1="4" y1="16" x2="20" y2="16"></line>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+
+      <!-- Hero Section (with Living WebThreads OGL Shader Canvas) -->
+      <section class="hero-section" id="hero-interactive-stage">
+        <!-- Living WebThreads Canvas Background -->
+        <div class="hero-threads-bg">
+          <div id="hero-web-threads-container" class="web-threads-container" style="width: 100%; height: 100%;"></div>
+        </div>
+        <div class="hero-ambient-glow"></div>
+
+        <div class="hero-content">
+          <!-- Verified Medical Alumna Badge -->
+          <div class="hero-meta-badge fade-up-scroll">
+            <span class="badge-dot"></span>
+            <span>BPT (Govt. Physiotherapy College, Surat • VNSGU) • In-Home Surat & Virtual Care</span>
+          </div>
+
+          <div class="hero-logo-wrap">
+            <div class="hero-eyebrow fade-up-scroll">*DR. JANVI RANA (PT) — CLINICAL PHYSIOTHERAPIST • SURAT IN-HOME
+              VISITS & VIRTUAL CARE</div>
+
+            <!-- Scroll-revealed masked editorial title -->
+            <h1 class="hero-headline title-reveal-wrap">
+              <span class="reveal-line">Physiotherapy for an</span>
+              <span class="reveal-line">active, pain-free <em>life</em>.</span>
+            </h1>
+          </div>
+
+          <p class="hero-desc fade-up-scroll">
+            Graduated from <strong>Government Physiotherapy College (Civil), Surat</strong> with extensive rotatory
+            hospital training across Civil Hospital Surat. Delivering dedicated 1-on-1, evidence-based rehabilitation
+            directly to your residence across Surat, alongside interactive HD virtual sessions worldwide.
+          </p>
+
+          <div class="hero-buttons fade-up-scroll">
+            <!-- Surat Visit Button -->
+            <a href="javascript:void(0);" data-open-modal="right" data-mode="visit" class="button button-item button-mint">
+              <span class="button-bg">
+                <span class="button-bg-layers">
+                  <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                  <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                  <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                </span>
+              </span>
+              <span class="button-inner">
+                <span class="button-inner-static">Book Surat Visit</span>
+                <span class="button-inner-hover">Book Surat Visit</span>
+              </span>
+            </a>
+
+            <!-- Virtual Session Trigger -->
+            <a href="javascript:void(0);" data-open-modal="right" data-mode="virtual" class="button button-item button-white">
+              <span class="button-bg">
+                <span class="button-bg-layers">
+                  <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                  <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                  <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                </span>
+              </span>
+              <span class="button-inner">
+                <span class="button-inner-static">Schedule Virtual Care</span>
+                <span class="button-inner-hover">Schedule Virtual Care</span>
+              </span>
+            </a>
+
+            <!-- Clinical Specializations Navigator -->
+            <a href="#pathologien" class="button button-item button-white">
+              <span class="button-bg">
+                <span class="button-bg-layers">
+                  <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                  <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                  <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                </span>
+              </span>
+              <span class="button-inner">
+                <span class="button-inner-static">Explore Treatments</span>
+                <span class="button-inner-hover">Explore Treatments</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- Hero Key Metrics & Hallmarks Strip -->
+          <div class="hero-hallmarks-grid fade-up-scroll">
+            <div class="hero-hallmark-item">
+              <div class="hallmark-num">CIVIL HOSP.</div>
+              <div class="hallmark-text">Surat Rotatory Internship<br><span>Ortho, Neuro, ICU & Surgery</span></div>
+            </div>
+            <div class="hero-hallmark-item">
+              <div class="hallmark-num">GOVT. BPT</div>
+              <div class="hallmark-text">Physiotherapy College (Civil)<br><span>VNSGU Alumna • Evidence-Based</span>
+              </div>
+            </div>
+            <div class="hero-hallmark-item">
+              <div class="hallmark-num">100%</div>
+              <div class="hallmark-text">1-on-1 Undivided Care<br><span>Zero Assistants • Direct Treatment</span></div>
+            </div>
+            <div class="hero-hallmark-item">
+              <div class="hallmark-num">SURAT+</div>
+              <div class="hallmark-text">8+ Areas & Worldwide<br><span>Home Visits & Virtual Telehealth</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Down Pulsing Indicator -->
+        <a href="#about-doctor" class="scroll-down" aria-label="Scroll to explore"></a>
+      </section>
+
+      <!-- 1. Meet Dr. Janvi Rana: Solo Doctor Profile Section (#about-doctor) -->
+      <section id="about-doctor" class="section-doctor-profile">
+        <div class="container">
+          <div class="doctor-profile-card">
+            <div class="row no-gutters align-items-stretch">
+
+              <!-- Doctor Portrait Column -->
+              <div class="col-lg-5">
+                <div class="doctor-portrait-wrap">
+                  <img src="Jaana.png"
+                    alt="Dr. Janvi Rana (PT) – Spine & Physiotherapy Specialist Surat">
+                  <div class="doctor-badge-floating">
+                    <strong>Dr. Janvi Rana (PT)</strong>
+                    <span>Govt. Physiotherapy College (Civil), Surat • VNSGU</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Doctor Bio Column -->
+              <div class="col-lg-7">
+                <div class="doctor-bio-content">
+                  <div class="asterisk ft-b-tiny ft-serif text-uppercase text-primary mb-2">Hospital-Trained Clinical
+                    Expertise</div>
+
+                  <div class="title-reveal-wrap">
+                    <h2 class="lead-heading reveal-line">Rigorous hospital clinical expertise delivered with
+                      <em>dedicated</em> 1-on-1 care.</h2>
+                  </div>
+
+                  <div class="doctor-credentials-list fade-up-scroll">
+                    <span class="credential-pill"
+                      style="background: rgba(0, 160, 154, 0.12); border-color: var(--primary); color: #00756e; font-weight: 700;">BPT
+                      – Govt. Physiotherapy College, Surat</span>
+                    <span class="credential-pill">Civil Hospital Rotations (Ortho • Neuro • ICU • Surgery • Peds)</span>
+                    <span class="credential-pill">Premvati Charitable Trust Clinic</span>
+                    <span class="credential-pill">Electrotherapy & Manual Rehab</span>
+                    <span class="credential-pill">English • Hindi • Gujarati</span>
+                  </div>
+
+                  <p class="fade-up-scroll">
+                    A graduate of <strong>Government Physiotherapy College (Civil), Surat</strong> (affiliated to Veer
+                    Narmad South Gujarat University), Dr. Janvi Rana completed an intensive 6-month rotatory internship
+                    at Civil Hospital Surat across Orthopedics, Neurology, General Medicine, Surgery, Pediatrics, and
+                    ICU & Cardiopulmonary departments. She brings rigorous hospital-grade standards directly into
+                    private home visits across Surat and interactive virtual consultations worldwide.
+                  </p>
+
+                  <p class="fade-up-scroll">
+                    With additional outpatient clinical training at Premvati Narayandas Arora Charitable Trust Clinic,
+                    she delivers dedicated 1-on-1 care with zero rushed appointments or junior assistants—combining
+                    hands-on joint mobilization, spinal decompression, advanced electrotherapy (IFT, TENS, Ultrasound),
+                    and personalized active exercise rehabilitation.
+                  </p>
+
+                  <div class="d-flex flex-wrap fade-up-scroll" style="gap: 1rem; margin-top: 2rem;">
+                    <a href="javascript:void(0);" data-open-modal="right" data-mode="visit"
+                      class="button button-item button-dark">
+                      <span class="button-bg">
+                        <span class="button-bg-layers">
+                          <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                          <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                          <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                        </span>
+                      </span>
+                      <span class="button-inner">
+                        <span class="button-inner-static">Schedule Surat Visit</span>
+                        <span class="button-inner-hover">Schedule Surat Visit</span>
+                      </span>
+                    </a>
+
+                    <a href="javascript:void(0);" data-open-modal="left"
+                      class="button button-item button-mint">
+                      <span class="button-bg">
+                        <span class="button-bg-layers">
+                          <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                          <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                          <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                        </span>
+                      </span>
+                      <span class="button-inner">
+                        <span class="button-inner-static">Clinical Credentials</span>
+                        <span class="button-inner-hover">Clinical Credentials</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editorial Clinical Manifesto: React Bits ScrollReveal Kinetic Section -->
+      <section class="section-manifesto-reveal">
+        <div class="container text-center">
+          <div class="manifesto-tag">*EVIDENCE-BASED RECOVERY PHILOSOPHY</div>
+          <div class="scroll-reveal mx-auto" style="max-width: 980px;">
+            <p class="scroll-reveal-text">
+              Recovery is not about enduring pain — it is about restoring anatomical freedom, rebuilding <em>biomechanical alignment</em>, and regaining confidence in every movement.
+            </p>
+          </div>
+          <p class="manifesto-subtext mx-auto">
+            From acute hospital clinical rotations at Civil Hospital Surat to private in-home rehabilitation, every treatment is delivered 1-on-1 with precision manual therapy and progressive recovery.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. ScrollExpand Interactive Precision Stage (#scroll-expand-section) -->
+      <section id="scroll-expand-section" class="scroll-expand" style="background: #111614; position: relative;">
+        <div class="scroll-expand__track">
+          <div class="scroll-expand__stage">
+            <div class="scroll-expand__frame">
+              <img class="scroll-expand__media" src="scebe 1.png"
+                alt="Dr. Janvi Rana Precision Spine & Rehabilitation Surat" draggable="false" />
+              <div class="scroll-expand__scrim"></div>
+              <div class="scroll-expand__overlay">
+                <div class="scroll-expand__glass-card">
+                  <div class="section-tag"
+                    style="color: var(--primary-mint); font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 0.75rem;">
+                    *CIVIL HOSPITAL CLINICAL ROTATIONS • EVIDENCE-BASED CARE</div>
+                  <h2
+                    style="font-family: var(--font-display); font-size: clamp(1.9rem, 4.5vw, 3.4rem); font-weight: 700; color: #ffffff; line-height: 1.15; max-width: 820px; margin-bottom: 1.15rem;">
+                    Precision Spinal & Musculoskeletal <em>Rehabilitation</em>.
+                  </h2>
+                  <p
+                    style="color: rgba(255, 255, 255, 0.92); font-size: clamp(1rem, 1.6vw, 1.2rem); max-width: 660px; line-height: 1.6; margin-bottom: 1.75rem;">
+                    Rigorous clinical rotations across high-acuity hospital wards including Orthopedics, Neurology, ICU,
+                    and General Surgery. Delivering focused 1-on-1 manual therapy, joint decompression, electrotherapy,
+                    and progressive functional recovery.
+                  </p>
+                  <div class="d-flex" style="gap: 1.25rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="javascript:void(0);" data-open-modal="right" class="button button-item button-mint">
+                      <span class="button-bg">
+                        <span class="button-bg-layers">
+                          <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                          <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                          <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                        </span>
+                      </span>
+                      <span class="button-inner">
+                        <span class="button-inner-static">Schedule A Session</span>
+                        <span class="button-inner-hover">Schedule A Session</span>
+                      </span>
+                    </a>
+                    <a href="#flowing-treatment-menu" class="button button-item button-white">
+                      <span class="button-bg">
+                        <span class="button-bg-layers">
+                          <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                          <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                          <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                        </span>
+                      </span>
+                      <span class="button-inner">
+                        <span class="button-inner-static">Explore Spectrum</span>
+                        <span class="button-inner-hover">Explore Spectrum</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="scroll-expand__title">
+              <span>Clinical Precision in</span> <em>Motion</em>
+            </div>
+            <div class="scroll-expand__hint">
+              ↓ Scroll to expand clinical stage
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Interactive Therapy Spectrum: Flowing Menu (#flowing-treatment-menu) -->
+      <section id="flowing-treatment-menu" class="section-flowing-menu"
+        style="background: #111614; padding: 5rem 0 0; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="container" style="margin-bottom: 3.5rem;">
+          <div class="text-center">
+            <div class="section-tag" style="color: var(--primary-mint);">*EXPERTISE SPECTRUM</div>
+            <div class="title-reveal-wrap">
+              <h2 class="section-title reveal-line" style="color: #ffffff;">Interactive <em>Therapy</em> Flow</h2>
+            </div>
+            <p class="section-sub-desc mx-auto"
+              style="color: rgba(255,255,255,0.76); max-width: 720px; margin-top: 1.25rem; text-align: center;">
+              Hover or touch each clinical pathway below to experience the dynamic flowing marquee showcasing Dr. Janvi Rana’s specialized rehabilitation modalities.
+            </p>
+          </div>
+        </div>
+
+        <!-- React Bits FlowingMenu Container -->
+        <div
+          style="height: 560px; position: relative; width: 100%; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <div id="flowing-menu-container" style="height: 100%; width: 100%; position: relative;"></div>
+        </div>
+      </section>
+
+      <!-- Interactive Pathologies Section with Sticky Progress Bar (#pathologien) -->
+      <section id="pathologien" class="section-pathology">
+        <div class="container">
+          <div class="pathology-header text-center">
+            <div class="section-tag">*TARGETED CLINICAL SPECIALTIES</div>
+            <div class="title-reveal-wrap">
+              <h2 class="section-title reveal-line">Clinical Specialties by <em>Dr. Janvi Rana</em></h2>
+            </div>
+          </div>
+
+          <div class="pathology-layout">
+
+            <!-- Sticky Sidebar with Animated Progress Indicator -->
+            <aside class="pathology-sidebar d-none d-lg-block">
+              <div class="progress-track">
+                <div class="progress-line-bg"></div>
+                <div class="line-inner"></div>
+
+                <ul class="pathology-nav-list">
+                  <li class="pathology-nav-item active">
+                    <span class="pathology-nav-link">01. Post-Operative Orthopedic Rehab</span>
+                  </li>
+                  <li class="pathology-nav-item">
+                    <span class="pathology-nav-link">02. Spine, Sciatica & Posture Alignment</span>
+                  </li>
+                  <li class="pathology-nav-item">
+                    <span class="pathology-nav-link">03. Neurological & Stroke Recovery</span>
+                  </li>
+                  <li class="pathology-nav-item">
+                    <span class="pathology-nav-link">04. Frozen Shoulder & Joint Mobilization</span>
+                  </li>
+                  <li class="pathology-nav-item">
+                    <span class="pathology-nav-link">05. Chest Physiotherapy & ICU Mobilization</span>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+
+            <!-- Cards Column -->
+            <div class="pathology-cards-column">
+
+              <!-- Card 1: Post-Op Orthopedics -->
+              <article class="kb-outer" id="post-op">
+                <div class="kb-card-content">
+                  <span class="kb-card-tag">Specialty 01 • Civil Hospital Orthopedic Rotation</span>
+                  <h3 class="kb-card-title">Post-Operative Orthopedic Rehabilitation</h3>
+                  <p class="kb-card-desc">
+                    Comprehensive post-surgical protocols following ACL reconstruction, total knee (TKR) or hip
+                    replacement (THR), and complex fracture fixations. Early swelling reduction, joint mobilization, and
+                    guided functional recovery.
+                  </p>
+                  <ul class="kb-feature-list">
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Post-Surgical Swelling & Edema Control
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Safe Range-of-Motion & Patellar Mobilization
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Quadriceps & Gluteal Muscle Reactivation
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Symmetric Gait Training & Fall Prevention
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0);" data-open-modal="right" data-mode="visit"
+                    class="button button-item button-dark button-small">
+                    <span class="button-bg">
+                      <span class="button-bg-layers">
+                        <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                        <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                        <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                      </span>
+                    </span>
+                    <span class="button-inner">
+                      <span class="button-inner-static">Consult for Post-Op Care</span>
+                      <span class="button-inner-hover">Consult for Post-Op Care</span>
+                    </span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Card 2: Spine, Sciatica & Posture -->
+              <article class="kb-outer" id="spine">
+                <div class="kb-card-content">
+                  <span class="kb-card-tag">Specialty 02 • Spine & Disc Health</span>
+                  <h3 class="kb-card-title">Spine, Sciatica & Postural Decompression</h3>
+                  <p class="kb-card-desc">
+                    Targeted relief for cervical spondylosis, radiating sciatica, lumbar disc herniation, and chronic
+                    postural strain. Precise mechanical decompression and activation of deep core stabilizers.
+                  </p>
+                  <ul class="kb-feature-list">
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Spinal Segmental Mobilization
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Neural Mobilization & Nerve Flossing
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      McKenzie Directional Preference Exercises
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Deep Core & Pelvic Alignment Conditioning
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0);" data-open-modal="right" data-mode="visit"
+                    class="button button-item button-dark button-small">
+                    <span class="button-bg">
+                      <span class="button-bg-layers">
+                        <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                        <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                        <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                      </span>
+                    </span>
+                    <span class="button-inner">
+                      <span class="button-inner-static">Consult for Spine Relief</span>
+                      <span class="button-inner-hover">Consult for Spine Relief</span>
+                    </span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Card 3: Neurological & Stroke Rehabilitation -->
+              <article class="kb-outer" id="neuro-rehab">
+                <div class="kb-card-content">
+                  <span class="kb-card-tag">Specialty 03 • Civil Hospital Neurology Rotation</span>
+                  <h3 class="kb-card-title">Neurological & Stroke Rehabilitation</h3>
+                  <p class="kb-card-desc">
+                    Evidence-based neurological motor retraining, neural mobilization, and guided functional recovery
+                    following stroke, peripheral neuropathy, and neurological movement deficits.
+                  </p>
+                  <ul class="kb-feature-list">
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Stroke Motor Re-Education & Synergy Retraining
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Peripheral Neuropathy & Neural Mobilization
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Balance, Coordination & Fall Prevention
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Independent Functional Activity & Gait Training
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0);" data-open-modal="right" data-mode="virtual"
+                    class="button button-item button-dark button-small">
+                    <span class="button-bg">
+                      <span class="button-bg-layers">
+                        <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                        <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                        <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                      </span>
+                    </span>
+                    <span class="button-inner">
+                      <span class="button-inner-static">Consult for Neuro Care</span>
+                      <span class="button-inner-hover">Consult for Neuro Care</span>
+                    </span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Card 4: Frozen Shoulder & Joint Mobilization -->
+              <article class="kb-outer" id="joints">
+                <div class="kb-card-content">
+                  <span class="kb-card-tag">Specialty 04 • Peripheral Joint Mobility</span>
+                  <h3 class="kb-card-title">Frozen Shoulder & Joint Mobilization</h3>
+                  <p class="kb-card-desc">
+                    Focused manual intervention for adhesive capsulitis (frozen shoulder), impingement syndromes,
+                    osteoarthritis, and joint contractures. Restoring pain-free overhead reach and scapular rhythm.
+                  </p>
+                  <ul class="kb-feature-list">
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Glenohumeral Capsular Release & Distraction
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Scapulothoracic Rhythm Re-education
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Kaltenborn & Maitland Mobilization Techniques
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Home Stretch Band Protocols & Ergonomic Advice
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0);" data-open-modal="right" data-mode="visit"
+                    class="button button-item button-dark button-small">
+                    <span class="button-bg">
+                      <span class="button-bg-layers">
+                        <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                        <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                        <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                      </span>
+                    </span>
+                    <span class="button-inner">
+                      <span class="button-inner-static">Relieve Shoulder Pain</span>
+                      <span class="button-inner-hover">Relieve Shoulder Pain</span>
+                    </span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Card 5: Chest Physiotherapy & ICU Early Mobilization -->
+              <article class="kb-outer" id="chest-physio">
+                <div class="kb-card-content">
+                  <span class="kb-card-tag">Specialty 05 • Civil Hospital ICU Rotation</span>
+                  <h3 class="kb-card-title">Chest Physiotherapy & Early Mobilization</h3>
+                  <p class="kb-card-desc">
+                    Specialized cardiopulmonary physiotherapy refined during high-acuity Civil Hospital ICU rotations.
+                    Post-operative lung expansion, secretion clearance, diaphragmatic breathing retraining, and safe
+                    bed-to-chair mobility.
+                  </p>
+                  <ul class="kb-feature-list">
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Postural Drainage & Percussion Techniques
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Diaphragmatic & Segmental Breathing Exercises
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Incentive Spirometry & Airway Clearance
+                    </li>
+                    <li class="kb-feature-item">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                      </svg>
+                      Early ICU Mobilization & Endurance Rebuilding
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0);" data-open-modal="right" data-mode="visit"
+                    class="button button-item button-dark button-small">
+                    <span class="button-bg">
+                      <span class="button-bg-layers">
+                        <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                        <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                        <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                      </span>
+                    </span>
+                    <span class="button-inner">
+                      <span class="button-inner-static">Inquire for Chest Physio</span>
+                      <span class="button-inner-hover">Inquire for Chest Physio</span>
+                    </span>
+                  </a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Dual Consultation Pathways: In-Person Home Visits vs HD Virtual Care (#features) -->
+      <section id="features" class="section-features">
+        <div class="container">
+          <div class="text-center mb-5">
+            <div class="section-tag">*CONSULTATION PATHWAYS</div>
+            <div class="title-reveal-wrap">
+              <h2 class="section-title reveal-line">Two Ways to <em>Recover</em> With Dr. Janvi</h2>
+            </div>
+            <p class="section-sub-desc mx-auto" style="max-width: 660px; color: var(--text-muted); margin-top: 0.8rem;">
+              Whether in the comfort of your Surat residence or via high-definition virtual telehealth across the globe,
+              receive undivided, evidence-based physiotherapy care.
+            </p>
+          </div>
+
+          <!-- Pillar 1: Image Left, Text Right (Surat Personal In-Home Visits) -->
+          <div class="row align-items-center boxes-wrap" style="margin-bottom: 4.5rem;">
+            <div class="col-lg-6 col-12 order-lg-1 mb-4 mb-lg-0">
+              <div class="image-wrap">
+                <div class="lazy-image-wrap">
+                  <img src="j1.png" alt="Dr. Janvi Rana In-Home Physiotherapy Care Surat" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12 order-lg-2">
+              <div class="title-wrap">
+                <div class="asterisk ft-b-tiny ft-serif text-uppercase text-primary mb-2">Direct In-Person Home Care
+                </div>
+                <div class="title-reveal-wrap">
+                  <h2 class="lead-heading reveal-line">Personal 1-on-1 visits across <em>Surat</em>.</h2>
+                </div>
+                <p class="description fade-up-scroll">
+                  Experience compassionate hospital-grade physiotherapy in your home without travel fatigue.
+                  Comprehensive manual joint mobilization, spinal decompression, and portable electrotherapy modalities
+                  (IFT, TENS, Ultrasound) brought directly to your doorstep.
+                </p>
+
+                <!-- Surat Neighborhoods Coverage Chips Integrated -->
+                <div class="pillar-corridor-wrap fade-up-scroll mb-4"
+                  style="background: rgba(0, 160, 154, 0.05); border: 1px solid rgba(0, 160, 154, 0.15); border-radius: 14px; padding: 1.25rem 1.4rem;">
+                  <div class="pillar-corridor-label mb-2"
+                    style="font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--primary);">
+                    <span class="asterisk" style="font-size: 0.95rem; margin-right: 0.35rem;">*</span>Surat
+                    Neighborhoods Covered:
+                  </div>
+                  <div class="corridor-chips" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="corridor-chip"><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>Adajan</span>
+                    <span class="corridor-chip"><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>Pal</span>
+                    <span class="corridor-chip"><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>Jahangirpura</span>
+                    <span class="corridor-chip"><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>Palanpur</span>
+                    <span class="corridor-chip"><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>Vesu</span>
+                    <span class="corridor-chip"><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>Piplod</span>
+                    <span class="corridor-chip"><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>Umra</span>
+                    <span class="corridor-chip"><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>Athwa</span>
+                  </div>
+                </div>
+
+                <div class="link-wrap fade-up-scroll">
+                  <a href="javascript:void(0);" data-open-modal="right" data-mode="visit"
+                    class="button button-item button-dark button-small">
+                    <span class="button-bg">
+                      <span class="button-bg-layers">
+                        <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                        <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                        <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                      </span>
+                    </span>
+                    <span class="button-inner">
+                      <span class="button-inner-static">Request Surat Visit</span>
+                      <span class="button-inner-hover">Request Surat Visit</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Text Left, Image Right (Virtual Video Consultations) -->
+          <div id="virtual-care" class="row align-items-center boxes-wrap">
+            <div class="col-lg-6 col-12 order-lg-2 mb-4 mb-lg-0">
+              <div class="image-wrap">
+                <div class="lazy-image-wrap">
+                  <img src="j2.png" alt="Virtual Physiotherapy Video Consultation Setup" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12 order-lg-1">
+              <div class="title-wrap">
+                <div class="asterisk ft-b-tiny ft-serif text-uppercase text-primary mb-2">Global Telehealth Worldwide
+                </div>
+                <div class="title-reveal-wrap">
+                  <h2 class="lead-heading reveal-line">High-definition <em>virtual</em> sessions from anywhere.</h2>
+                </div>
+                <p class="description fade-up-scroll">
+                  Distance is no barrier to recovery. Connect via Zoom or Google Meet for biomechanical movement
+                  testing, neurological motor guidance, ergonomic workstation audits, and customized progressive home
+                  exercise regimens.
+                </p>
+                <div class="link-wrap fade-up-scroll">
+                  <a href="javascript:void(0);" data-open-modal="right" data-mode="virtual"
+                    class="button button-item button-dark button-small">
+                    <span class="button-bg">
+                      <span class="button-bg-layers">
+                        <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                        <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                        <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                      </span>
+                    </span>
+                    <span class="button-inner">
+                      <span class="button-inner-static">Schedule Virtual Care</span>
+                      <span class="button-inner-hover">Schedule Virtual Care</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 6. Patient Testimonials / Reviews (#testimonials) -->
+      <section id="testimonials" class="section-reviews">
+        <div class="container">
+          <div class="text-center">
+            <div class="section-tag">*PATIENT EXPERIENCES</div>
+            <div class="title-reveal-wrap">
+              <h2 class="section-title reveal-line">Real Stories of <em>Restored Mobility</em></h2>
+            </div>
+          </div>
+
+          <div class="reviews-grid">
+
+            <!-- Review 1 -->
+            <div class="review-card fade-up-scroll">
+              <div class="asterisk ft-b-tiny ft-serif text-uppercase text-primary mb-2">Surat Personal Visit • Adajan
+              </div>
+              <h4 class="review-author">Meera Shah</h4>
+              <div class="review-role">Cervical Spine & Headache Recovery</div>
+              <p class="review-quote">
+                "I had struggled with chronic neck stiffness and daily morning headaches for months. Dr. Janvi’s
+                hands-on spinal mobilization and ergonomic adjustments brought immense relief within weeks. Her clinical
+                training from Civil Hospital Surat gives complete confidence."
+              </p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card fade-up-scroll">
+              <div class="asterisk ft-b-tiny ft-serif text-uppercase text-primary mb-2">Virtual Care • Bangalore</div>
+              <h4 class="review-author">Rohan Mehta</h4>
+              <div class="review-role">Virtual Telehealth • Tech Neck & Disc Strain</div>
+              <p class="review-quote">
+                "Sitting 10 hours a day as a software engineer caused debilitating lower back pain. Dr. Janvi evaluated
+                my movement over HD video, guided me through targeted corrective exercises, and audited my desk posture.
+                Fully pain-free now!"
+              </p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card fade-up-scroll">
+              <div class="asterisk ft-b-tiny ft-serif text-uppercase text-primary mb-2">Surat Personal Visit • Vesu
+              </div>
+              <h4 class="review-author">Amit Desai</h4>
+              <div class="review-role">Post-Operative ACL Rehabilitation</div>
+              <p class="review-quote">
+                "Dr. Janvi supervised my post-surgical knee rehab with meticulous care. Her progressive strengthening
+                protocols and gait correction helped me regain normal walking and return to activity without
+                apprehension."
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Giant Typographic Footer (medwest-footer-content) -->
+    <footer id="medwest-footer-content">
+      <!-- Ambient Looping Canvas Waves -->
+      <canvas id="footer-wave-canvas"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.22; pointer-events: none;"></canvas>
+
+      <div class="container">
+
+        <!-- Big Outline Anchor Headlines -->
+        <div class="big-headlines text-center text-lg-left">
+          <a href="#about-doctor" data-trans="DR. JANVI RANA">DR. JANVI RANA</a>
+          <a href="#features" data-trans="SURAT VISITS">SURAT VISITS</a>
+          <a href="#pathologien" data-trans="REHABILITATION">REHABILITATION</a>
+        </div>
+
+        <!-- Horizontal Navigation Links -->
+        <nav class="footer-nav justify-content-center justify-content-lg-start">
+          <a href="#about-doctor">ABOUT DR. JANVI</a>
+          <a href="#features">SURAT VISITS</a>
+          <a href="#features">VIRTUAL TELEHEALTH</a>
+          <a href="#pathologien">CLINICAL SPECIALTIES</a>
+          <a href="#testimonials">PATIENT REVIEWS</a>
+          <a href="javascript:void(0);" data-open-modal="left">CREDENTIALS</a>
+          <a href="https://wa.me/919662698781?text=Hello%20Dr.%20Janvi%20Rana!" target="_blank" rel="noopener">WHATSAPP
+            INQUIRIES</a>
+        </nav>
+
+        <!-- 4-Column Contact Details -->
+        <div class="footer-columns">
+
+          <!-- Column 1: Surat Areas Covered -->
+          <div>
+            <div class="footer-col-title">Surat Areas Covered</div>
+            <div class="footer-col-content">
+              <strong>Dr. Janvi Rana (PT)</strong><br>
+              Adajan • Pal • Jahangirpura<br>
+              Palanpur • Vesu • Piplod<br>
+              Umra • Athwa<br>
+              Surat, Gujarat, India
+            </div>
+          </div>
+
+          <!-- Column 2: Appointment Model -->
+          <div>
+            <div class="footer-col-title">Consultation Model</div>
+            <div class="footer-col-content">
+              Flexible Appointments<br>
+              Direct Home Visits in Surat<br>
+              Virtual Telehealth Worldwide<br>
+              <em>Languages: English, Hindi, Gujarati</em>
+            </div>
+          </div>
+
+          <!-- Column 3: Contact & WhatsApp -->
+          <div>
+            <div class="footer-col-title">Direct Inquiries</div>
+            <div class="footer-col-content">
+              WhatsApp: <a href="https://wa.me/919662698781" target="_blank" rel="noopener">+91 96626 98781</a><br>
+              Phone: <a href="tel:+919662698781">+91 96626 98781</a><br>
+              Email: <a href="mailto:janvibrana1802@gmail.com">janvibrana1802@gmail.com</a>
+            </div>
+          </div>
+
+          <!-- Column 4: Virtual & Social -->
+          <div>
+            <div class="footer-col-title">Virtual Sessions & Chat</div>
+            <div class="footer-col-content">
+              HD Video: Zoom & Google Meet<br>
+              <a href="https://wa.me/919662698781" target="_blank" rel="noopener">Instant WhatsApp Chat</a><br>
+              Govt. Physiotherapy College (Civil), Surat<br>
+              Affiliated to VNSGU
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sub-Footer Legal -->
+        <div class="footer-bottom">
+          <div>&copy; 2026 Dr. Janvi Rana (PT) | BPT, Govt. Physiotherapy College (Civil), Surat • VNSGU | All Rights
+            Reserved.</div>
+          <div class="d-flex" style="gap: 1.5rem;">
+            <a href="javascript:void(0);" data-open-modal="left">Credentials & Background</a>
+            <a href="https://wa.me/919662698781" target="_blank" rel="noopener">WhatsApp Inquiries</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/bubble-effects.js"></script>
+  <script src="js/transitions.js"></script>
+  <script src="js/flowing-menu.js"></script>
+  <script src="js/scroll-expand.js"></script>
+  <script src="js/option-wheel.js"></script>
+  <script src="js/scroll-reveal.js"></script>
+  <script type="module" src="js/web-threads.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
