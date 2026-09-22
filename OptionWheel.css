@@ -182,7 +182,7 @@
 
   .option-wheel {
     --ow-font-size: 1.85rem;
-    --ow-inset: 24px;
+    --ow-inset: 20px;
   }
 
   .fullscreen-menu-side-card {
@@ -192,19 +192,29 @@
 
 @media (max-width: 576px) {
   .fullscreen-menu-wheel-wrap {
-    padding: 4.5rem 1rem 1.5rem;
+    padding: 4.5rem 0.75rem 1.5rem;
+  }
+
+  .fullscreen-menu-wheel-container {
+    height: 72vh;
   }
 
   .option-wheel {
-    --ow-font-size: 1.45rem;
-    --ow-inset: 14px;
+    --ow-font-size: clamp(1.15rem, 4.5vw, 1.4rem);
+    --ow-inset: 12px;
   }
 
   .option-wheel__item {
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .option-wheel__item-badge {
     display: none;
+  }
+
+  .option-wheel-guide {
+    font-size: 0.68rem;
+    bottom: 1rem;
+    left: 4%;
   }
 }

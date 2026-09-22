@@ -214,10 +214,43 @@
   transform: scale(1);
 }
 
-/* Mobile full width support */
-@media (max-width: 576px) {
+/* Mobile full width support & touch ergonomics */
+@media (max-width: 768px) {
+  .button {
+    height: 3.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .button-small {
+    height: 2.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 0.88rem;
+  }
   .hero-buttons .button {
     width: 100%;
     max-width: 340px;
   }
 }
+
+@media (max-width: 480px) {
+  .button {
+    height: 3.1rem;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+    font-size: 0.88rem;
+    max-width: 100%;
+  }
+  .button-small {
+    height: 2.55rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.82rem;
+  }
+  .hero-buttons .button {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+

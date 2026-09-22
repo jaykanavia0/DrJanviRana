@@ -118,20 +118,30 @@
     menuItem.appendChild(marquee);
     nav.appendChild(menuItem);
 
-    // Setup Edge-detection Enter/Leave Animations
+    // Setup Edge-detection Enter/Leave & Touch Animations
     const animationDefaults = { duration: 0.6, ease: 'expo' };
+
+    const showMarquee = (edge = 'bottom') => {
+      gsap
+        .timeline({ defaults: animationDefaults })
+        .set(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
+        .set(inner, { y: edge === 'top' ? '101%' : '-101%' }, 0)
+        .to([marquee, inner], { y: '0%' }, 0);
+    };
+
+    const hideMarquee = (edge = 'bottom') => {
+      gsap
+        .timeline({ defaults: animationDefaults })
+        .to(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
+        .to(inner, { y: edge === 'top' ? '101%' : '-101%' }, 0);
+    };
 
     menuItem.addEventListener('mouseenter', (ev) => {
       const rect = menuItem.getBoundingClientRect();
       const x = ev.clientX - rect.left;
       const y = ev.clientY - rect.top;
       const edge = findClosestEdge(x, y, rect.width, rect.height);
-
-      gsap
-        .timeline({ defaults: animationDefaults })
-        .set(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
-        .set(inner, { y: edge === 'top' ? '101%' : '-101%' }, 0)
-        .to([marquee, inner], { y: '0%' }, 0);
+      showMarquee(edge);
     });
 
     menuItem.addEventListener('mouseleave', (ev) => {
@@ -139,12 +149,13 @@
       const x = ev.clientX - rect.left;
       const y = ev.clientY - rect.top;
       const edge = findClosestEdge(x, y, rect.width, rect.height);
-
-      gsap
-        .timeline({ defaults: animationDefaults })
-        .to(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
-        .to(inner, { y: edge === 'top' ? '101%' : '-101%' }, 0);
+      hideMarquee(edge);
     });
+
+    // Mobile touch interaction
+    menuItem.addEventListener('touchstart', () => {
+      showMarquee('bottom');
+    }, { passive: true });
 
     // Setup Marquee Loop Animation
     setTimeout(() => {

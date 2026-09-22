@@ -469,18 +469,6 @@ body.medwest-modal-open-right .medwest-modal-backdrop {
   visibility: hidden;
 }
 
-@media (max-width: 576px) {
-  #medwest-modal,
-  #medwest-modal-right {
-    width: 100%;
-    max-width: 100%;
-    padding: 3.5rem 1.25rem 2.5rem;
-  }
-  .form-control {
-    font-size: 16px !important; /* Prevents auto-zoom in iOS Safari */
-  }
-}
-
 #medwest-modal {
   left: 0;
   transform: translateX(-100%);
@@ -519,6 +507,29 @@ body.medwest-modal-open #medwest-page {
 body.medwest-modal-open-right #medwest-page {
   transform: translateX(-50px);
   filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  #medwest-modal,
+  #medwest-modal-right {
+    width: 100%;
+    max-width: 100%;
+    padding: 3.5rem 1.25rem 2.5rem;
+  }
+  .modal-close-btn {
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 40px;
+    height: 40px;
+  }
+  .form-control {
+    font-size: 16px !important; /* Prevents auto-zoom in iOS Safari */
+  }
+  body.medwest-modal-open #medwest-page,
+  body.medwest-modal-open-right #medwest-page {
+    transform: none;
+    filter: blur(2px);
+  }
 }
 
 /* Modal Close Button */

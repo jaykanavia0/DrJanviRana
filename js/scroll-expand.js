@@ -17,13 +17,14 @@
     const root = document.getElementById(rootId);
     if (!root) return;
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
     const defaults = {
-      startWidth: 46,
-      startHeight: 60,
-      startRadius: 28,
+      startWidth: isMobile ? 86 : 46,
+      startHeight: isMobile ? 68 : 60,
+      startRadius: isMobile ? 18 : 28,
       endRadius: 0,
-      mediaZoom: 1.35,
-      scrollDistance: 1.2,
+      mediaZoom: isMobile ? 1.15 : 1.35,
+      scrollDistance: isMobile ? 0.9 : 1.2,
       holdDistance: 0.35,
       smoothing: 0.1,
       overlayScrim: 0.55,
