@@ -4,3 +4,13 @@ node_modules/
 .vscode/
 .idea/
 *.log
+
+# Personal Documents & Non-web Assets
+*.pdf
+*.docx
+*.mp4
+WhatsApp*
+HallTicket*
+Janvi_Rana_Resume*
+Graded*
+
