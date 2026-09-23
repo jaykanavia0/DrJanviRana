@@ -45,16 +45,20 @@
 .button-mint {
   color: #0F2C27;
 }
+
 .button-mint .button-bg {
   border-color: #34D399;
   background-color: #34D399;
 }
+
 .button-mint .button-bg-layer.-purple {
   background-color: #00A09A;
 }
+
 .button-mint .button-bg-layer.-turquoise {
   background-color: #6EE7B7;
 }
+
 .button-mint .button-bg-layer.-yellow {
   background-color: #34D399;
 }
@@ -63,16 +67,20 @@
 .button-dark {
   color: #ffffff;
 }
+
 .button-dark .button-bg {
   border-color: #0F2C27;
   background-color: #0F2C27;
 }
+
 .button-dark .button-bg-layer.-purple {
   background-color: #1a423b;
 }
+
 .button-dark .button-bg-layer.-turquoise {
   background-color: #00A09A;
 }
+
 .button-dark .button-bg-layer.-yellow {
   background-color: #0F2C27;
 }
@@ -81,16 +89,20 @@
 .button-white {
   color: #0F2C27;
 }
+
 .button-white .button-bg {
   border-color: #ffffff;
   background-color: #ffffff;
 }
+
 .button-white .button-bg-layer.-purple {
   background-color: #E2E8F0;
 }
+
 .button-white .button-bg-layer.-turquoise {
   background-color: #A7F3D0;
 }
+
 .button-white .button-bg-layer.-yellow {
   background-color: #ffffff;
 }
@@ -214,43 +226,10 @@
   transform: scale(1);
 }
 
-/* Mobile full width support & touch ergonomics */
-@media (max-width: 768px) {
-  .button {
-    height: 3.25rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    font-size: 0.95rem;
-  }
-  .button-small {
-    height: 2.75rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    font-size: 0.88rem;
-  }
+/* Mobile full width support */
+@media (max-width: 576px) {
   .hero-buttons .button {
     width: 100%;
     max-width: 340px;
   }
 }
-
-@media (max-width: 480px) {
-  .button {
-    height: 3.1rem;
-    padding-left: 1.15rem;
-    padding-right: 1.15rem;
-    font-size: 0.88rem;
-    max-width: 100%;
-  }
-  .button-small {
-    height: 2.55rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 0.82rem;
-  }
-  .hero-buttons .button {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-

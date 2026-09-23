@@ -31,7 +31,7 @@
   gap: 2.25rem;
 }
 
-/* From Uiverse.io by satyamchaudharydev */ 
+/* From Uiverse.io by satyamchaudharydev */
 .spinner {
   position: relative;
   width: 60px;
@@ -331,9 +331,20 @@
 }
 
 @keyframes pulseAura {
-  0% { transform: scale(0.96); opacity: 0.8; }
-  60% { transform: scale(1.08); opacity: 0; }
-  100% { transform: scale(1.08); opacity: 0; }
+  0% {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+
+  60% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
 }
 
 /* Floating WhatsApp Quick Action Button */
@@ -469,6 +480,21 @@ body.medwest-modal-open-right .medwest-modal-backdrop {
   visibility: hidden;
 }
 
+@media (max-width: 576px) {
+
+  #medwest-modal,
+  #medwest-modal-right {
+    width: 100%;
+    max-width: 100%;
+    padding: 3.5rem 1.25rem 2.5rem;
+  }
+
+  .form-control {
+    font-size: 16px !important;
+    /* Prevents auto-zoom in iOS Safari */
+  }
+}
+
 #medwest-modal {
   left: 0;
   transform: translateX(-100%);
@@ -507,29 +533,6 @@ body.medwest-modal-open #medwest-page {
 body.medwest-modal-open-right #medwest-page {
   transform: translateX(-50px);
   filter: blur(2px);
-}
-
-@media (max-width: 768px) {
-  #medwest-modal,
-  #medwest-modal-right {
-    width: 100%;
-    max-width: 100%;
-    padding: 3.5rem 1.25rem 2.5rem;
-  }
-  .modal-close-btn {
-    top: 1.25rem;
-    right: 1.25rem;
-    width: 40px;
-    height: 40px;
-  }
-  .form-control {
-    font-size: 16px !important; /* Prevents auto-zoom in iOS Safari */
-  }
-  body.medwest-modal-open #medwest-page,
-  body.medwest-modal-open-right #medwest-page {
-    transform: none;
-    filter: blur(2px);
-  }
 }
 
 /* Modal Close Button */
@@ -885,7 +888,9 @@ body:hover #cursor-follower {
 }
 
 @media (max-width: 991px) {
-  #cursor, #cursor-follower {
+
+  #cursor,
+  #cursor-follower {
     display: none !important;
   }
 }
@@ -902,11 +907,25 @@ body:hover #cursor-follower {
 }
 
 @keyframes slideFromRight {
-  from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideFromLeft {
-  from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

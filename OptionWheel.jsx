@@ -4,13 +4,11 @@ import './OptionWheel.css';
 const DEFAULT_ITEMS = [
   'About Dr. Janvi',
   'Surat In-Home Visits',
-  'Virtual Sessions',
   'Conditions Treated',
   'Patient Reviews',
   'Surat Coverage',
   'Clinical Credentials',
   'Book Surat Visit',
-  'Book Virtual Session'
 ];
 
 const OptionWheel = ({

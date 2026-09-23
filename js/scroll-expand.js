@@ -17,14 +17,13 @@
     const root = document.getElementById(rootId);
     if (!root) return;
 
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
     const defaults = {
-      startWidth: isMobile ? 86 : 46,
-      startHeight: isMobile ? 68 : 60,
-      startRadius: isMobile ? 18 : 28,
+      startWidth: 46,
+      startHeight: 60,
+      startRadius: 28,
       endRadius: 0,
-      mediaZoom: isMobile ? 1.15 : 1.35,
-      scrollDistance: isMobile ? 0.9 : 1.2,
+      mediaZoom: 1.35,
+      scrollDistance: 1.2,
       holdDistance: 0.35,
       smoothing: 0.1,
       overlayScrim: 0.55,
@@ -156,3 +155,30 @@
 
   window.initScrollExpand = initScrollExpand;
 })();
+target = readProgress();
+current = target;
+applyProgress(current);
+    };
+
+measure();
+target = readProgress();
+current = target;
+applyProgress(current);
+
+const scroller = config.useWindowScroll ? window : root;
+scroller.addEventListener('scroll', onScroll, { passive: true });
+window.addEventListener('resize', onResize);
+motion.addEventListener('change', onResize);
+const ro = new ResizeObserver(onResize);
+ro.observe(root);
+const card = root.querySelector('.scroll-expand__glass-card');
+if (card) ro.observe(card);
+document.fonts?.ready.then(onResize);
+  }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initScrollExpand('scroll-expand-section');
+});
+
+window.initScrollExpand = initScrollExpand;
+}) ();

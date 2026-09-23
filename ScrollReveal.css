@@ -76,28 +76,3 @@
   text-align: center;
   text-wrap: pretty;
 }
-
-@media (max-width: 768px) {
-  .section-manifesto-reveal {
-    padding: 4.5rem 1.25rem;
-  }
-  .scroll-reveal-text {
-    font-size: clamp(1.45rem, 5.8vw, 2.3rem);
-    line-height: 1.32;
-  }
-  .section-manifesto-reveal .manifesto-subtext {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-top: 1.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-manifesto-reveal {
-    padding: 3.5rem 1rem;
-  }
-  .scroll-reveal-text {
-    font-size: clamp(1.25rem, 5.2vw, 1.8rem);
-  }
-}
-

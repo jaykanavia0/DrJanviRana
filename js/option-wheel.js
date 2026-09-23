@@ -13,7 +13,7 @@
       label: 'About Dr. Janvi',
       tag: 'Clinical Profile',
       title: 'Dr. Janvi Rana (PT)',
-      desc: 'BPT from Govt. Physiotherapy College Surat • VNSGU. 6 months intensive rotatory clinical internship across Civil Hospital high-acuity wards.',
+      desc: 'Currently working with Spinex, Surat. BPT from Govt. Physiotherapy College Surat • VNSGU, with clinical rotations at Civil Hospital Surat.',
       href: '#about-doctor',
       ctaText: 'View Profile'
     },
@@ -24,14 +24,6 @@
       desc: 'Specialized home rehabilitation across Adajan, Vesu, Piplod, Pal, VIP Road, and Athwa Lines with portable clinical equipment.',
       href: '#features',
       ctaText: 'Explore Home Care'
-    },
-    {
-      label: 'Virtual Rehab',
-      tag: 'Anywhere Consultation',
-      title: 'HD Virtual Sessions',
-      desc: 'Biomechanical screen analysis, guided posture corrections, and personalized recovery prescription anywhere via secure video.',
-      href: '#virtual-care',
-      ctaText: 'Book Virtual Call'
     },
     {
       label: 'Conditions & Specializations',
@@ -74,15 +66,6 @@
       mode: 'visit',
       ctaText: 'Reserve Visit'
     },
-    {
-      label: 'Book Virtual Consultation',
-      tag: 'Online Triage',
-      title: 'Schedule Virtual Session',
-      desc: 'Instant video assessment, exercise prescription, and ergonomics evaluation.',
-      modal: 'right',
-      mode: 'virtual',
-      ctaText: 'Reserve Online'
-    }
   ];
 
   function initOptionWheel(containerId, options = {}) {
@@ -92,8 +75,8 @@
     const items = options.items || DEFAULT_MENU_ITEMS;
     const defaults = {
       defaultSelected: 0,
-      textColor: '#8E9E99',
-      activeColor: '#0F2C27',
+      textColor: '#56675c',
+      activeColor: '#0c1713',
       side: 'left',
       fontSize: window.innerWidth < 992 ? 1.85 : 2.5,
       spacing: 1.35,
@@ -183,7 +166,8 @@
 
     const executeItemAction = item => {
       // Close menu
-      document.body.classList.remove('menu-open');
+      if (window.toggleMenu) window.toggleMenu(false);
+      else document.body.classList.remove('menu-open');
       const trigger = document.getElementById('menu-trigger');
       if (trigger) trigger.classList.remove('active');
 
@@ -210,7 +194,7 @@
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
       const tau = Math.max(cfg.smoothing, 1) / 1000;
-      const k = 1 - Math.exp(-dt / tau);
+      const k = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 1 : 1 - Math.exp(-dt / tau);
 
       let next = pos + (target - pos) * k;
       const settled = Math.abs(target - next) < 0.001;
@@ -360,19 +344,23 @@
     const handleResize = () => {
       const isCompact = window.innerWidth < 576;
       const isMobile = window.innerWidth < 992;
-      cfg.fontSize = isCompact ? 1.45 : isMobile ? 1.85 : 2.5;
+      cfg.fontSize = isCompact ? Math.max(1.05, Math.min(1.35, root.clientWidth / 260)) : isMobile ? 1.65 : 2.1;
       cfg.inset = isCompact ? 14 : isMobile ? 24 : 70;
       root.style.setProperty('--ow-font-size', `${cfg.fontSize}rem`);
       root.style.setProperty('--ow-inset', `${cfg.inset}px`);
       const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-      rowH = Math.max(cfg.fontSize * cfg.spacing * rem, 1);
+      rowH = Math.max(cfg.fontSize * cfg.spacing * rem, 56, ...itemEls.map(el => el.scrollHeight + 16));
       applyTarget(target, false);
     };
 
     window.addEventListener('resize', handleResize);
+    const resizeObserver = new ResizeObserver(handleResize);
+    resizeObserver.observe(root);
+    document.fonts?.ready.then(handleResize);
 
     // Initial render & preview
     updatePreviewCard(cfg.defaultSelected);
+    handleResize();
     applyTarget(cfg.defaultSelected, true);
 
     return {
@@ -380,6 +368,7 @@
       destroy: () => {
         if (raf) cancelAnimationFrame(raf);
         window.removeEventListener('resize', handleResize);
+        resizeObserver.disconnect();
       }
     };
   }

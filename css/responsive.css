@@ -1,0 +1,84 @@
+/* Shared device rules, loaded after component styles. */
+html { scroll-padding-top: 100px; }
+body { overflow-x: clip; }
+img, video { max-width: 100%; }
+.row > *, .footer-columns > *, .portal-features > *, .reviews-grid > * { min-width: 0; }
+.footer-col-content, .modal-text, .modal-desc, .description, .kb-card-title { overflow-wrap: anywhere; }
+.practice-source-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--color-forest); text-decoration: underline; text-underline-offset: 4px; }
+.button { max-width: 100%; min-height: 44px; height: auto; padding-block: 14px; white-space: normal; }
+.button-inner, .button-inner-static, .button-inner-hover { white-space: normal; text-align: center; }
+.button:focus-visible, a:focus-visible, button:focus-visible, .option-wheel:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+#medwest-modal, #medwest-modal-right, #fullscreen-menu, .site-loader { height: 100dvh; }
+#medwest-modal, #medwest-modal-right { overscroll-behavior: contain; padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+.modal-close-btn { min-width: 44px; min-height: 44px; }
+.form-control { min-width: 0; max-width: 100%; font-size: 16px; }
+.footer-bottom, .footer-bottom > .d-flex { flex-wrap: wrap; }
+.floating-whatsapp { bottom: max(20px, env(safe-area-inset-bottom)); right: max(18px, env(safe-area-inset-right)); }
+.option-wheel__item { width: calc(100% - var(--ow-inset) * 2); white-space: normal; min-height: 44px; line-height: 1.25; }
+.option-wheel__item-label { min-width: 0; overflow-wrap: anywhere; }
+.option-wheel__item-num { flex-shrink: 0; }
+.fullscreen-menu-wheel-container { height: 76svh; }
+.option-wheel-guide { max-width: 90%; }
+#menu-close { position: absolute; top: max(16px, env(safe-area-inset-top)); right: max(20px, env(safe-area-inset-right)); z-index: 3; display: flex; align-items: center; gap: 16px; min-height: 44px; padding: 8px 14px; background: var(--color-ivory); color: var(--color-ink); border: 1px solid var(--color-sage); border-radius: 4px; font: 500 14px var(--font-sans); cursor: pointer; }
+#menu-close span { font-size: 24px; }
+.menu__item-link { white-space: normal; line-height: 1.35; padding: 16px 24px; font-size: clamp(16px, 2.2vw, 30px); }
+.scroll-expand__viewport { position: absolute; height: 100svh; width: 0; visibility: hidden; pointer-events: none; }
+.scroll-expand__glass-card { min-width: 0; max-width: min(900px, 100%); }
+.scroll-expand__overlay:focus-within { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }
+.scroll-expand__frame:has(:focus-visible) { clip-path: none !important; }
+.scroll-expand[data-static=true] .scroll-expand__stage { position: relative; }
+.scroll-expand[data-static=true] .scroll-expand__frame { clip-path: none !important; }
+.scroll-expand[data-static=true] .scroll-expand__title,
+.scroll-expand[data-static=true] .scroll-expand__hint { display: none; }
+@media (max-width: 1199px) {
+  .option-wheel__item-badge { display: none; }
+  .fullscreen-menu-side-card { flex-basis: 300px; padding: 24px; }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portal-features { gap: 24px; }
+  .doctor-bio-content { padding: 32px 24px; }
+}
+@media (max-width: 991px) {
+  .fullscreen-menu-wheel-wrap { padding: 80px 16px 55px; }
+  .fullscreen-menu-wheel-container { flex: 1 1 auto; height: 100%; }
+  .option-wheel-guide { font-size: 10px; letter-spacing: .04em; bottom: max(20px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 767px) {
+  html { scroll-padding-top: 84px; }
+  .container { padding-inline: 20px; }
+  #medwest-header { padding-inline: max(16px, env(safe-area-inset-left)); }
+  #medwest-header .brand-title { font-size: 17px; }
+  #medwest-header .brand-tagline { font-size: 9px; white-space: normal; max-width: 26ch; }
+  #medwest-header .header-actions { gap: 8px; }
+  #medwest-header #menu-toggle { padding: 0; min-width: 44px; min-height: 44px; }
+  .menu-toggle-text { display: none; }
+  .portal-care h2 { font-size: clamp(30px, 8vw, 46px); overflow-wrap: anywhere; }
+  .portal-care .hero-buttons { width: 100%; }
+  .portal-book { white-space: normal; }
+  .portal-care .portal-book { width: 100%; }
+  .portal-features, .reviews-grid, .footer-columns { grid-template-columns: minmax(0, 1fr); }
+  .doctor-credentials-list { flex-wrap: wrap; }
+.credential-pill { white-space: normal; }
+  .scroll-expand__overlay { padding: 76px 16px 36px; }
+  .scroll-expand__glass-card { width: 100%; margin: 0; padding: 24px 18px; backdrop-filter: none; background: rgb(var(--color-ink-rgb) / .88); }
+  .scroll-expand__glass-card .section-tag { font-size: 11px !important; letter-spacing: .08em !important; }
+  .flowing-menu-wrapper-box { height: auto; }
+  .menu__item { min-height: 90px; flex: 0 0 auto; }
+  .menu__item-link { font-size: clamp(16px, 4.4vw, 22px); }
+  .footer-bottom > .d-flex { justify-content: center; gap: 12px !important; }
+  .footer-nav a { min-height: 44px; display: inline-flex; align-items: center; }
+}
+@media (max-height: 600px) and (min-width: 768px) {
+  .fullscreen-menu-wheel-wrap { padding-block: 60px 40px; }
+  .fullscreen-menu-wheel-container { height: 100%; }
+  .fullscreen-menu-side-card { display: none; }
+  .scroll-expand__overlay { padding: 80px 24px 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .fade-up-scroll, .reveal-line, .title-reveal, .scroll-reveal .word { opacity: 1 !important; filter: none !important; transform: none !important; }
+  .scroll-reveal { transform: none !important; }
+  .marquee { display: none; }
+}

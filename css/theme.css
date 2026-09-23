@@ -1,0 +1,27 @@
+/* Shared palette: forest, sage, warm ivory and ink. */
+:root {
+  --color-ink: #0c1713;
+  --color-ink-rgb: 12 23 19;
+  --color-forest: #24563e;
+  --color-forest-rgb: 36 86 62;
+  --color-muted: #56675c;
+  --color-muted-rgb: 86 103 92;
+  --color-sage: #c5ddca;
+  --color-sage-rgb: 197 221 202;
+  --color-ivory: #f7f6f0;
+  --color-ivory-rgb: 247 246 240;
+  --color-white: #ffffff;
+  --color-white-rgb: 255 255 255;
+  --portal-highlight: #91bea0;
+  --portal-mid: #559675;
+  --portal-edge: #2f7153;
+  --portal-depth: #173b2d;
+  --portal-shadow: #10251d;
+}
+.button-mint { color: var(--color-ink); }
+.button-mint .button-bg { background: var(--color-sage); border-color: var(--color-sage); }
+.button-bg-layer-1, .button-bg-layer-2, .button-bg-layer-3 { background: var(--color-sage) !important; }
+.button-dark .button-bg-layer { background: var(--color-forest) !important; }
+.button-white .button-bg-layer { background: var(--color-ivory) !important; }
+.reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 767px) { .reviews-grid { grid-template-columns: 1fr; } }

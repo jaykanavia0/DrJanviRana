@@ -1,25 +1,4 @@
 /* FlowingMenu Component CSS from React Bits */
-.flowing-menu-wrapper-box {
-  height: 560px;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-@media (max-width: 768px) {
-  .flowing-menu-wrapper-box {
-    height: 480px;
-  }
-}
-
-@media (max-width: 480px) {
-  .flowing-menu-wrapper-box {
-    height: 420px;
-  }
-}
-
 .menu-wrap {
   width: 100%;
   height: 100%;
@@ -42,9 +21,6 @@
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   transition: border-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .menu__item:first-child {
@@ -55,7 +31,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   height: 100%;
   position: relative;
   cursor: pointer;
@@ -64,7 +39,7 @@
   white-space: nowrap;
   font-family: var(--font-display, "Playfair Display", Georgia, serif);
   font-weight: 600;
-  font-size: clamp(1.15rem, 3.2vh, 2.4rem);
+  font-size: clamp(1.2rem, 3.2vh, 2.4rem);
   letter-spacing: 0.04em;
   padding: 0 1rem;
   transition: color 0.3s ease;
@@ -116,7 +91,7 @@
   text-transform: uppercase;
   font-family: var(--font-display, "Playfair Display", Georgia, serif);
   font-weight: 600;
-  font-size: clamp(1.4rem, 3.5vh, 2.6rem);
+  font-size: clamp(1.6rem, 3.5vh, 2.6rem);
   line-height: 1;
   padding: 0 1vw;
   color: #ffffff;
@@ -125,53 +100,10 @@
 .marquee__img {
   width: 160px;
   height: 6vh;
-  min-height: 38px;
-  margin: 0.8em 1.5vw;
-  padding: 0.8em 0;
+  margin: 1em 1.5vw;
+  padding: 1em 0;
   border-radius: 40px;
   background-size: cover;
   background-position: 50% 50%;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  flex-shrink: 0;
 }
-
-@media (max-width: 768px) {
-  .menu__item-link {
-    font-size: clamp(0.92rem, 3.8vw, 1.25rem);
-    padding: 0 0.75rem;
-    letter-spacing: 0.02em;
-    white-space: normal;
-    text-align: center;
-    line-height: 1.25;
-  }
-  .marquee span {
-    font-size: clamp(1.05rem, 4.2vw, 1.45rem);
-    padding: 0 2vw;
-  }
-  .marquee__img {
-    width: 85px;
-    height: 34px;
-    min-height: 30px;
-    margin: 0.4em 1vw;
-    border-radius: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu__item-link {
-    font-size: clamp(0.82rem, 3.4vw, 1.02rem);
-    padding: 0 0.5rem;
-    line-height: 1.2;
-  }
-  .marquee span {
-    font-size: clamp(0.9rem, 3.8vw, 1.2rem);
-  }
-  .marquee__img {
-    width: 68px;
-    height: 28px;
-    min-height: 24px;
-    margin: 0.3em 0.8vw;
-    border-radius: 14px;
-  }
-}
-

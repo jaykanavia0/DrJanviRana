@@ -11,32 +11,32 @@
     {
       link: '#pathologien',
       text: 'Post-Operative Orthopedic Rehab',
-      image: 'assets/images/ortho-rehab.png'
+      image: 'f1.png'
     },
     {
       link: '#pathologien',
       text: 'Spine, Sciatica & Posture Alignment',
-      image: 'assets/images/spine-sciatica.png'
+      image: 'f2.png'
     },
     {
       link: '#pathologien',
       text: 'Neurological & Stroke Recovery',
-      image: 'assets/images/neuro-stroke.png'
+      image: 'f4.png'
     },
     {
       link: '#pathologien',
       text: 'Advanced Electrotherapy (IFT & TENS)',
-      image: 'assets/images/electrotherapy.png'
+      image: 'f3.png'
     },
     {
       link: '#pathologien',
       text: 'Frozen Shoulder & Joint Mobilization',
-      image: 'assets/images/joint-mobilization.png'
+      image: 'f7.png'
     },
     {
       link: '#virtual-care',
       text: 'Virtual Telehealth Care Worldwide',
-      image: 'assets/images/virtual-consultation.png'
+      image: 'j2.png'
     }
   ];
 
@@ -118,30 +118,20 @@
     menuItem.appendChild(marquee);
     nav.appendChild(menuItem);
 
-    // Setup Edge-detection Enter/Leave & Touch Animations
+    // Setup Edge-detection Enter/Leave Animations
     const animationDefaults = { duration: 0.6, ease: 'expo' };
-
-    const showMarquee = (edge = 'bottom') => {
-      gsap
-        .timeline({ defaults: animationDefaults })
-        .set(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
-        .set(inner, { y: edge === 'top' ? '101%' : '-101%' }, 0)
-        .to([marquee, inner], { y: '0%' }, 0);
-    };
-
-    const hideMarquee = (edge = 'bottom') => {
-      gsap
-        .timeline({ defaults: animationDefaults })
-        .to(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
-        .to(inner, { y: edge === 'top' ? '101%' : '-101%' }, 0);
-    };
 
     menuItem.addEventListener('mouseenter', (ev) => {
       const rect = menuItem.getBoundingClientRect();
       const x = ev.clientX - rect.left;
       const y = ev.clientY - rect.top;
       const edge = findClosestEdge(x, y, rect.width, rect.height);
-      showMarquee(edge);
+
+      gsap
+        .timeline({ defaults: animationDefaults })
+        .set(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
+        .set(inner, { y: edge === 'top' ? '101%' : '-101%' }, 0)
+        .to([marquee, inner], { y: '0%' }, 0);
     });
 
     menuItem.addEventListener('mouseleave', (ev) => {
@@ -149,13 +139,12 @@
       const x = ev.clientX - rect.left;
       const y = ev.clientY - rect.top;
       const edge = findClosestEdge(x, y, rect.width, rect.height);
-      hideMarquee(edge);
-    });
 
-    // Mobile touch interaction
-    menuItem.addEventListener('touchstart', () => {
-      showMarquee('bottom');
-    }, { passive: true });
+      gsap
+        .timeline({ defaults: animationDefaults })
+        .to(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
+        .to(inner, { y: edge === 'top' ? '101%' : '-101%' }, 0);
+    });
 
     // Setup Marquee Loop Animation
     setTimeout(() => {
@@ -178,3 +167,31 @@
   container.appendChild(menuWrap);
 
 })();
+if (motion.matches) return;
+const firstPart = inner.querySelector('.marquee__part');
+if (firstPart) {
+  const contentWidth = firstPart.offsetWidth;
+  if (contentWidth > 0) {
+    loop = gsap.to(inner, {
+      x: -contentWidth,
+      duration: config.speed,
+      ease: 'none',
+      repeat: -1,
+      paused: !visible
+    });
+  }
+}
+    };
+new ResizeObserver(refreshLoop).observe(inner.firstElementChild);
+new IntersectionObserver(([entry]) => {
+  visible = entry.isIntersecting;
+  if (loop) visible && !motion.matches ? loop.play() : loop.pause();
+}).observe(menuItem);
+motion.addEventListener('change', refreshLoop);
+document.fonts?.ready.then(refreshLoop);
+  });
+
+menuWrap.appendChild(nav);
+container.appendChild(menuWrap);
+
+}) ();

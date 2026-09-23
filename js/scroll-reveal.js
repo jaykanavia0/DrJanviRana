@@ -7,7 +7,7 @@
   'use strict';
 
   function initScrollReveal(target, options = {}) {
-    if (typeof gsap === 'undefined') {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       console.warn('ScrollReveal: GSAP is required.');
       return;
     }

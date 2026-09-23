@@ -33,10 +33,6 @@
   <!-- GSAP 3 & ScrollTrigger for React Bits FlowingMenu and ScrollReveal kinetic animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- Lenis Smooth Scroll (Modern, lightweight inertia scrolling) -->
-  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
-  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 </head>
 
 <body>
@@ -83,7 +79,7 @@
 
   <!-- Dual Slide-Out Modal: Left Drawer (Doctor Profile & Clinical Credentials) -->
   <div class="medwest-modal-backdrop"></div>
-  <aside id="medwest-modal" aria-label="About Dr. Janvi Rana" data-lenis-prevent>
+  <aside id="medwest-modal" aria-label="About Dr. Janvi Rana">
     <button class="modal-close-btn" aria-label="Close Drawer">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round">
         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -92,7 +88,7 @@
     </button>
     <div class="modal-inner">
       <div class="d-flex align-items-center mb-3" style="gap: 1.15rem;">
-        <img src="assets/images/dr-janvi-portrait.png" alt="Dr. Janvi Rana (PT)"
+        <img src="Jaana.png" alt="Dr. Janvi Rana (PT)"
           style="width: 68px; height: 68px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2.5px solid var(--primary-mint); box-shadow: 0 4px 14px rgba(0, 160, 154, 0.35); flex-shrink: 0;">
         <div>
           <div class="asterisk ft-b-tiny ft-serif text-uppercase text-primary-mint mb-1">Verified Clinical Credentials
@@ -107,7 +103,8 @@
       <div class="modal-info-box" style="border-left: 3px solid #5eead4; background: rgba(0, 160, 154, 0.15);">
         <h4 style="color: #5eead4; margin-bottom: 0.35rem;">Civil Hospital Surat • Comprehensive Rotations (2026)</h4>
         <p style="margin: 0; color: #e2e8f0;">Hands-on rotatory clinical internship across high-acuity departments:
-          <strong>Orthopedics, Neurology, General Medicine, Surgery, Pediatrics, and ICU & Cardiopulmonary</strong>.</p>
+          <strong>Orthopedics, Neurology, General Medicine, Surgery, Pediatrics, and ICU & Cardiopulmonary</strong>.
+        </p>
       </div>
 
       <p class="modal-text">
@@ -165,7 +162,7 @@
   </aside>
 
   <!-- Dual Slide-Out Modal: Right Drawer (Consultation & In-Home / Virtual Booking) -->
-  <aside id="medwest-modal-right" aria-label="Book Physiotherapy Consultation" data-lenis-prevent>
+  <aside id="medwest-modal-right" aria-label="Book Physiotherapy Consultation">
     <button class="modal-close-btn" aria-label="Close Consultation Drawer">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round">
         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -275,7 +272,7 @@
   </aside>
 
   <!-- Fullscreen Navigation Menu Overlay with React Bits OptionWheel -->
-  <nav id="fullscreen-menu" aria-label="Main Navigation" data-lenis-prevent>
+  <nav id="fullscreen-menu" aria-label="Main Navigation">
     <div class="fullscreen-menu-wheel-wrap">
       <!-- Left side: Interactive React Bits OptionWheel -->
       <div class="fullscreen-menu-wheel-container">
@@ -287,7 +284,8 @@
         <div class="fullscreen-menu-side-card__tag">Clinical Profile</div>
         <h3 class="fullscreen-menu-side-card__title">Dr. Janvi Rana (PT)</h3>
         <p class="fullscreen-menu-side-card__desc">
-          BPT from Govt. Physiotherapy College Surat • VNSGU. 6 months intensive rotatory clinical internship across Civil Hospital high-acuity wards.
+          BPT from Govt. Physiotherapy College Surat • VNSGU. 6 months intensive rotatory clinical internship across
+          Civil Hospital high-acuity wards.
         </p>
         <a href="#about-doctor" class="button button-item button-dark button-small fullscreen-menu-side-card__cta">
           <span class="button-bg">
@@ -395,7 +393,8 @@
 
           <div class="hero-buttons fade-up-scroll">
             <!-- Surat Visit Button -->
-            <a href="javascript:void(0);" data-open-modal="right" data-mode="visit" class="button button-item button-mint">
+            <a href="javascript:void(0);" data-open-modal="right" data-mode="visit"
+              class="button button-item button-mint">
               <span class="button-bg">
                 <span class="button-bg-layers">
                   <span class="button-bg-layer button-bg-layer-1 -purple"></span>
@@ -410,7 +409,8 @@
             </a>
 
             <!-- Virtual Session Trigger -->
-            <a href="javascript:void(0);" data-open-modal="right" data-mode="virtual" class="button button-item button-white">
+            <a href="javascript:void(0);" data-open-modal="right" data-mode="virtual"
+              class="button button-item button-white">
               <span class="button-bg">
                 <span class="button-bg-layers">
                   <span class="button-bg-layer button-bg-layer-1 -purple"></span>
@@ -475,8 +475,7 @@
               <!-- Doctor Portrait Column -->
               <div class="col-lg-5">
                 <div class="doctor-portrait-wrap">
-                  <img src="assets/images/dr-janvi-portrait.png"
-                    alt="Dr. Janvi Rana (PT) – Spine & Physiotherapy Specialist Surat">
+                  <img src="Jaana.png" alt="Dr. Janvi Rana (PT) – Spine & Physiotherapy Specialist Surat">
                   <div class="doctor-badge-floating">
                     <strong>Dr. Janvi Rana (PT)</strong>
                     <span>Govt. Physiotherapy College (Civil), Surat • VNSGU</span>
@@ -492,7 +491,8 @@
 
                   <div class="title-reveal-wrap">
                     <h2 class="lead-heading reveal-line">Rigorous hospital clinical expertise delivered with
-                      <em>dedicated</em> 1-on-1 care.</h2>
+                      <em>dedicated</em> 1-on-1 care.
+                    </h2>
                   </div>
 
                   <div class="doctor-credentials-list fade-up-scroll">
@@ -536,8 +536,7 @@
                       </span>
                     </a>
 
-                    <a href="javascript:void(0);" data-open-modal="left"
-                      class="button button-item button-mint">
+                    <a href="javascript:void(0);" data-open-modal="left" class="button button-item button-mint">
                       <span class="button-bg">
                         <span class="button-bg-layers">
                           <span class="button-bg-layer button-bg-layer-1 -purple"></span>
@@ -565,11 +564,13 @@
           <div class="manifesto-tag">*EVIDENCE-BASED RECOVERY PHILOSOPHY</div>
           <div class="scroll-reveal mx-auto" style="max-width: 980px;">
             <p class="scroll-reveal-text">
-              Recovery is not about enduring pain — it is about restoring anatomical freedom, rebuilding <em>biomechanical alignment</em>, and regaining confidence in every movement.
+              Recovery is not about enduring pain — it is about restoring anatomical freedom, rebuilding
+              <em>biomechanical alignment</em>, and regaining confidence in every movement.
             </p>
           </div>
           <p class="manifesto-subtext mx-auto">
-            From acute hospital clinical rotations at Civil Hospital Surat to private in-home rehabilitation, every treatment is delivered 1-on-1 with precision manual therapy and progressive recovery.
+            From acute hospital clinical rotations at Civil Hospital Surat to private in-home rehabilitation, every
+            treatment is delivered 1-on-1 with precision manual therapy and progressive recovery.
           </p>
         </div>
       </section>
@@ -579,7 +580,7 @@
         <div class="scroll-expand__track">
           <div class="scroll-expand__stage">
             <div class="scroll-expand__frame">
-              <img class="scroll-expand__media" src="assets/images/spine-rehab-scene.png"
+              <img class="scroll-expand__media" src="scebe 1.png"
                 alt="Dr. Janvi Rana Precision Spine & Rehabilitation Surat" draggable="false" />
               <div class="scroll-expand__scrim"></div>
               <div class="scroll-expand__overlay">
@@ -649,13 +650,15 @@
             </div>
             <p class="section-sub-desc mx-auto"
               style="color: rgba(255,255,255,0.76); max-width: 720px; margin-top: 1.25rem; text-align: center;">
-              Hover or touch each clinical pathway below to experience the dynamic flowing marquee showcasing Dr. Janvi Rana’s specialized rehabilitation modalities.
+              Hover or touch each clinical pathway below to experience the dynamic flowing marquee showcasing Dr. Janvi
+              Rana’s specialized rehabilitation modalities.
             </p>
           </div>
         </div>
 
         <!-- React Bits FlowingMenu Container -->
-        <div class="flowing-menu-wrapper-box">
+        <div
+          style="height: 560px; position: relative; width: 100%; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
           <div id="flowing-menu-container" style="height: 100%; width: 100%; position: relative;"></div>
         </div>
       </section>
@@ -987,7 +990,7 @@
             <div class="col-lg-6 col-12 order-lg-1 mb-4 mb-lg-0">
               <div class="image-wrap">
                 <div class="lazy-image-wrap">
-                  <img src="assets/images/home-visit-care.png" alt="Dr. Janvi Rana In-Home Physiotherapy Care Surat" loading="lazy">
+                  <img src="j1.png" alt="Dr. Janvi Rana In-Home Physiotherapy Care Surat" loading="lazy">
                 </div>
               </div>
             </div>
@@ -1073,7 +1076,7 @@
             <div class="col-lg-6 col-12 order-lg-2 mb-4 mb-lg-0">
               <div class="image-wrap">
                 <div class="lazy-image-wrap">
-                  <img src="assets/images/virtual-consultation.png" alt="Virtual Physiotherapy Video Consultation Setup" loading="lazy">
+                  <img src="j2.png" alt="Virtual Physiotherapy Video Consultation Setup" loading="lazy">
                 </div>
               </div>
             </div>
