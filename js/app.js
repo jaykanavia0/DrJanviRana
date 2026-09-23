@@ -9,6 +9,40 @@
   const WHATSAPP_PHONE = '919662698781';
 
   // ============================================================
+  // 0. Lenis Smooth Scrolling Engine
+  // ============================================================
+  let lenis = null;
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1.05,
+      touchMultiplier: 1.5,
+      infinite: false
+    });
+
+    window.lenis = lenis;
+
+    // Connect Lenis with GSAP ScrollTrigger ticker
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+  }
+
+  // ============================================================
   // 1. Dual Slide-Out Modals
   // ============================================================
   const body = document.body;
@@ -27,6 +61,7 @@
     } else if (side === 'right') {
       body.classList.add('medwest-modal-open-right');
     }
+    if (lenis) lenis.stop();
   }
 
   window.openMedwestModal = function (side, mode) {
@@ -37,6 +72,9 @@
   function closeAllModals() {
     body.classList.remove('medwest-modal-open');
     body.classList.remove('medwest-modal-open-right');
+    if (lenis && !body.classList.contains('menu-open')) {
+      lenis.start();
+    }
   }
 
   openLeftModalBtns.forEach((btn) => {
@@ -128,6 +166,11 @@
 
     if (body.classList.contains('menu-open')) {
       closeAllModals();
+      if (lenis) lenis.stop();
+    } else {
+      if (lenis && !body.classList.contains('medwest-modal-open') && !body.classList.contains('medwest-modal-open-right')) {
+        lenis.start();
+      }
     }
   };
 
@@ -296,17 +339,51 @@
     renderWave();
   }
 
+  // ============================================================
+  // 7. Smooth Anchor Navigation via Lenis
+  // ============================================================
+  function smoothScrollToTarget(targetSelector, offset = -70) {
+    const targetEl = typeof targetSelector === 'string' ? document.querySelector(targetSelector) : targetSelector;
+    if (targetEl) {
+      if (body.classList.contains('menu-open')) {
+        window.toggleMenu(false);
+      }
+      closeAllModals();
+
+      if (window.lenis) {
+        window.lenis.scrollTo(targetEl, {
+          offset: offset,
+          duration: 1.25,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
+      } else {
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+
   // Scroll down indicator
   const scrollDownIndicator = document.querySelector('.scroll-down');
   if (scrollDownIndicator) {
     scrollDownIndicator.addEventListener('click', (e) => {
       e.preventDefault();
-      const nextSection = document.querySelector('#about-doctor') || document.querySelector('.section-doctor-profile');
-      if (nextSection) {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      smoothScrollToTarget('#about-doctor', -60);
     });
   }
+
+  // Internal anchor links (e.g. #about-doctor, #pathologien, #features, etc.)
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href && href !== '#' && href.length > 1 && !this.hasAttribute('data-open-modal')) {
+        const targetEl = document.querySelector(href);
+        if (targetEl) {
+          e.preventDefault();
+          smoothScrollToTarget(targetEl, -70);
+        }
+      }
+    });
+  });
 
   // ============================================================
   // 8. Fullscreen Initial Loading Screen Dismissal
