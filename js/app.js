@@ -29,8 +29,7 @@
     }
   }
 
-  window.openMedwestModal = function (side, mode) {
-    if (mode) setConsultationMode(mode);
+  window.openMedwestModal = function (side) {
     openModal(side);
   };
 
@@ -49,10 +48,6 @@
   openRightModalBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const mode = btn.getAttribute('data-mode');
-      if (mode) {
-        setConsultationMode(mode);
-      }
       openModal('right');
     });
   });
@@ -78,43 +73,6 @@
   });
 
   // ============================================================
-  // 2. Consultation Mode Selection (Home Visit vs Virtual)
-  // ============================================================
-  const modeBtns = document.querySelectorAll('.mode-btn');
-  const appointmentTypeInput = document.getElementById('appointment-type');
-  const appointmentNotice = document.getElementById('mode-notice');
-  const areaGroup = document.getElementById('area-selection-group');
-
-  function setConsultationMode(mode) {
-    modeBtns.forEach((b) => b.classList.remove('active'));
-    const targetBtn = document.querySelector(`.mode-btn[data-mode="${mode}"]`);
-    if (targetBtn) {
-      targetBtn.classList.add('active');
-    }
-
-    if (appointmentTypeInput) {
-      appointmentTypeInput.value = mode;
-    }
-
-    if (appointmentNotice) {
-      if (mode === 'virtual') {
-        appointmentNotice.innerHTML = '<strong>Virtual Session:</strong> Conducted via secure HD video (Zoom / Google Meet). Comprehensive posture assessment, guided movements & digital exercise regimen.';
-        if (areaGroup) areaGroup.style.display = 'none';
-      } else {
-        appointmentNotice.innerHTML = '<strong>Surat Visit:</strong> Personal 1-on-1 session by Dr. Janvi Rana across covered Surat areas (Adajan, Pal, Jahangirpura, Palanpur, Vesu, Piplod, Umra, Athwa).';
-        if (areaGroup) areaGroup.style.display = 'block';
-      }
-    }
-  }
-
-  modeBtns.forEach((btn) => {
-    btn.addEventListener('click', function () {
-      const mode = this.getAttribute('data-mode');
-      setConsultationMode(mode);
-    });
-  });
-
-  // ============================================================
   // 3. Fullscreen Hamburger Menu Toggle
   // ============================================================
   const menuToggle = document.getElementById('menu-toggle');
@@ -130,6 +88,8 @@
       closeAllModals();
     }
   };
+
+  document.getElementById('menu-close')?.addEventListener('click', () => window.toggleMenu(false));
 
   if (menuToggle) {
     menuToggle.addEventListener('click', (e) => {
@@ -169,8 +129,8 @@
   // ============================================================
   // 5. Booking Form & WhatsApp Direct Dispatch (+91 9662698781)
   // ============================================================
-  const bookingForm = document.getElementById('appointment-form');
-  const successAlert = document.getElementById('form-success');
+  const bookingForm = document.getElementById('consultation-form');
+  const successAlert = document.getElementById('booking-success-alert');
   const whatsappQuickBtn = document.getElementById('whatsapp-direct-submit');
 
   function buildWhatsAppMessage() {
@@ -178,14 +138,13 @@
     const phone = document.getElementById('client-phone') ? document.getElementById('client-phone').value.trim() : '';
     const service = document.getElementById('client-service') ? document.getElementById('client-service').value : '';
     const area = document.getElementById('client-area') ? document.getElementById('client-area').value : '';
-    const mode = appointmentTypeInput ? appointmentTypeInput.value : 'visit';
     const message = document.getElementById('client-message') ? document.getElementById('client-message').value.trim() : '';
 
     let text = `Hello Dr. Janvi Rana!\nI would like to inquire about a Physiotherapy consultation.\n\n`;
-    text += `• Consultation Type: ${mode === 'virtual' ? 'Virtual Video Session' : 'Surat Visit'}\n`;
+    text += `• Consultation Type: Surat Home Visit\n`;
     if (name) text += `• Name: ${name}\n`;
     if (phone) text += `• Phone: ${phone}\n`;
-    if (area && mode !== 'virtual') text += `• Surat Area: ${area}\n`;
+    if (area) text += `• Surat Area: ${area}\n`;
     if (service) text += `• Concern: ${service}\n`;
     if (message) text += `• Details: ${message}\n`;
 
@@ -213,16 +172,16 @@
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-        bookingForm.reset();
+
 
         // Open WhatsApp directly with patient info
         const msg = encodeURIComponent(buildWhatsAppMessage());
         window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
 
         if (successAlert) {
-          successAlert.style.display = 'block';
+          successAlert.classList.remove('d-none');
           setTimeout(() => {
-            successAlert.style.display = 'none';
+            successAlert.classList.add('d-none');
             closeAllModals();
           }, 3500);
         }

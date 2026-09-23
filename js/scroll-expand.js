@@ -31,6 +31,11 @@
     };
 
     const config = { ...defaults, ...options };
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const viewport = document.createElement('div');
+    viewport.className = 'scroll-expand__viewport';
+    viewport.setAttribute('aria-hidden', 'true');
+    root.appendChild(viewport);
 
     const track = root.querySelector('.scroll-expand__track');
     const stage = root.querySelector('.scroll-expand__stage');
@@ -50,6 +55,7 @@
     let running = false;
 
     const applyProgress = p => {
+      if (motion.matches) p = 1;
       const e = smoothstep(0, 1, p);
 
       const w = config.startWidth + (100 - config.startWidth) * e;
@@ -84,10 +90,16 @@
     };
 
     const measure = () => {
-      stageH = config.useWindowScroll ? window.innerHeight : root.clientHeight;
+      const mobile = window.innerWidth < 768;
+      Object.assign(config, { startWidth: mobile ? 86 : 46, startHeight: mobile ? 68 : 60,
+        startRadius: mobile ? 18 : 28, mediaZoom: mobile ? 1.15 : 1.35,
+        scrollDistance: mobile ? .9 : 1.2, ...options });
+      const card = root.querySelector('.scroll-expand__glass-card');
+      stageH = Math.max(config.useWindowScroll ? (viewport.offsetHeight || window.innerHeight) : root.clientHeight, (card?.offsetHeight || 0) + 132);
+      root.dataset.static = String(motion.matches);
       if (stageH <= 0) return;
       stage.style.height = `${stageH}px`;
-      track.style.height = `${stageH * (1 + Math.max(0, config.scrollDistance) + Math.max(0, config.holdDistance))}px`;
+      track.style.height = `${stageH * (motion.matches ? 1 : 1 + Math.max(0, config.scrollDistance) + Math.max(0, config.holdDistance))}px`;
 
       const w = root.clientWidth || stageH;
       const isSmall = w < 600;
@@ -121,6 +133,7 @@
     };
 
     const onScroll = () => {
+      if (motion.matches) return;
       target = readProgress();
       if (config.smoothing <= 0) {
         current = target;
@@ -131,6 +144,8 @@
     };
 
     const onResize = () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0; running = false;
       measure();
       target = readProgress();
       current = target;
@@ -147,6 +162,10 @@
     window.addEventListener('resize', onResize);
     const ro = new ResizeObserver(onResize);
     ro.observe(root);
+    const card = root.querySelector('.scroll-expand__glass-card');
+    if (card) ro.observe(card);
+    motion.addEventListener('change', onResize);
+    document.fonts?.ready.then(onResize);
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -155,30 +174,3 @@
 
   window.initScrollExpand = initScrollExpand;
 })();
-target = readProgress();
-current = target;
-applyProgress(current);
-    };
-
-measure();
-target = readProgress();
-current = target;
-applyProgress(current);
-
-const scroller = config.useWindowScroll ? window : root;
-scroller.addEventListener('scroll', onScroll, { passive: true });
-window.addEventListener('resize', onResize);
-motion.addEventListener('change', onResize);
-const ro = new ResizeObserver(onResize);
-ro.observe(root);
-const card = root.querySelector('.scroll-expand__glass-card');
-if (card) ro.observe(card);
-document.fonts?.ready.then(onResize);
-  }
-
-document.addEventListener('DOMContentLoaded', () => {
-  initScrollExpand('scroll-expand-section');
-});
-
-window.initScrollExpand = initScrollExpand;
-}) ();

@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "node scripts/build-site.cjs"
+  },
   "dependencies": {
     "lenis": "^1.3.26"
   }

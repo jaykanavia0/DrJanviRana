@@ -11,33 +11,28 @@
     {
       link: '#pathologien',
       text: 'Post-Operative Orthopedic Rehab',
-      image: 'f1.png'
+      image: 'assets/images/ortho-rehab.png'
     },
     {
       link: '#pathologien',
       text: 'Spine, Sciatica & Posture Alignment',
-      image: 'f2.png'
+      image: 'assets/images/spine-sciatica.png'
     },
     {
       link: '#pathologien',
       text: 'Neurological & Stroke Recovery',
-      image: 'f4.png'
+      image: 'assets/images/neuro-stroke.png'
     },
     {
       link: '#pathologien',
       text: 'Advanced Electrotherapy (IFT & TENS)',
-      image: 'f3.png'
+      image: 'assets/images/electrotherapy.png'
     },
     {
       link: '#pathologien',
       text: 'Frozen Shoulder & Joint Mobilization',
-      image: 'f7.png'
+      image: 'assets/images/joint-mobilization.png'
     },
-    {
-      link: '#virtual-care',
-      text: 'Virtual Telehealth Care Worldwide',
-      image: 'j2.png'
-    }
   ];
 
   const config = {
@@ -167,31 +162,3 @@
   container.appendChild(menuWrap);
 
 })();
-if (motion.matches) return;
-const firstPart = inner.querySelector('.marquee__part');
-if (firstPart) {
-  const contentWidth = firstPart.offsetWidth;
-  if (contentWidth > 0) {
-    loop = gsap.to(inner, {
-      x: -contentWidth,
-      duration: config.speed,
-      ease: 'none',
-      repeat: -1,
-      paused: !visible
-    });
-  }
-}
-    };
-new ResizeObserver(refreshLoop).observe(inner.firstElementChild);
-new IntersectionObserver(([entry]) => {
-  visible = entry.isIntersecting;
-  if (loop) visible && !motion.matches ? loop.play() : loop.pause();
-}).observe(menuItem);
-motion.addEventListener('change', refreshLoop);
-document.fonts?.ready.then(refreshLoop);
-  });
-
-menuWrap.appendChild(nav);
-container.appendChild(menuWrap);
-
-}) ();

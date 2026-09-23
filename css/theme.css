@@ -1,5 +1,20 @@
 /* Shared palette: forest, sage, warm ivory and ink. */
 :root {
+  --primary: var(--color-forest);
+  --primary-hover: var(--portal-depth);
+  --primary-dark: var(--color-ink);
+  --primary-light: var(--color-ivory);
+  --primary-alt: var(--color-forest);
+  --primary-alt-dark: var(--color-ink);
+  --primary-mint: var(--color-sage);
+  --whatsapp: var(--color-forest);
+  --whatsapp-dark: var(--portal-depth);
+  --dark: var(--color-ink);
+  --dark-soft: var(--color-ink);
+  --text-muted: var(--color-muted);
+  --bg-light: var(--color-ivory);
+  --bg-white: var(--color-white);
+  --bg-dark: var(--color-ink);
   --color-ink: #0c1713;
   --color-ink-rgb: 12 23 19;
   --color-forest: #24563e;
